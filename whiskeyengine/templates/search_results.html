@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block body_id %}search-results{% endblock %}
+
+{% block main %}
+<div id="main-holder" class="cf">
+    <div class="shell">
+        <div id="main">
+            <div class="cl">&nbsp;</div>
+            <div id="main-search" class="ui-corner-all">
+                <form id="main_search" method="GET" action="/search/">
+                    Search For A Whiskey
+                    <input type="text" class="search" name="q">
+                    <button type="submit" class="btn-search" value="Search">
+                        <span>Search</span>
+                    </button>
+                </form>
+            </div>
+            <div id="content" class="home-content">
+                {% if results %}
+                {% for result in results %}
+                <div class="post cf">
+                    <div class="post-left-side">
+                        <div class="post-img">
+                            <a class="whiskey_url" whiskey_id="{{ result.pk }}" href="/{{ result.object.slug }}/">
+                                <img width="200" height="300" class="featured_url" src="{{ MEDIA_URL }}{{ result.object.bottle }}" alt="" />
+                            </a>
+                        </div>
+                        <div class="raiting-row">
+                            <p class="raiting-stars">{% for star in result.object.average_rating_list %}<img src="/static/css/images/full_star.gif" alt="" />&nbsp;{% endfor %}</p>
+                            <p><span class="reviews_count">{{ result.object.reviews.count }}</span> Review<span class="reviews_plural">{{ result.object.reviews.count|pluralize }}</span> / <span class="drinkers_count">{{ result.object.drinkers.count }}</span> Drinker<span class="drinkers_plural">{{ whiskey.drinkers.count|pluralize }}</span></p>
+                            <h4><a href="javascript:review({{ result.pk }});" class="blue-btn we-btn">Add a Review</a></h4>
+                        </div>
+                    </div>
+                    <div class="post-cnt">
+                        <h2 class="graphic-bg"><a class="whiskey_url" href="/{{ result.object.slug }}/"><span class="whiskey_name">{{ result.data.name }}</span></a></h2>
+                        <h3><span class="distillery_name">{{ result.object.distillery }}</span> - <a class="category_url" href="{{ result.object.category.get_absolute_url }}"><span class="category_name">{{ result.object.category }}</span></a></h3>
+                        <div class="post-entry">
+                            {{ result.data.description }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>Sorry, no matching whiskeys were found.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

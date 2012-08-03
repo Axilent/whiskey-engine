@@ -1,0 +1,15 @@
+			<div id="most-reviewed-side">
+				<h4>Most Reviewed</h4>
+				<ul>
+                    {% for whiskey in most_reviewed %}
+				    <li>
+				    	<div class="reviewed-img">
+				    		<a href="{{ whiskey.get_absolute_url }}"><img src="{{ whiskey.reviewed.url }}" alt="" /></a>
+				    	</div>
+				    	<h4><a href="{{ whiskey.get_absolute_url }}">{{ whiskey.name }}</a></h4>
+				    	<p><a href="{% url drinker whiskey.reviews.latest.reviewer.pk %}">{{ whiskey.reviews.latest.reviewer.user.get_full_name }}</a></p>
+                        <p class="rev-date short">{{ whiskey.reviews.latest.created|timesince }} ago.</p>
+				    </li>
+                    {% endfor %}
+				</ul>
+			</div>

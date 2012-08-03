@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <!-- Begin Main Holder  -->
+    <div id="main-holder">
+    	<!-- Begin Shell -->
+    	<div class="shell">
+    		<!-- Begin Main -->
+    		<div id="main">
+    			<div class="cl">&nbsp;</div>
+				<!-- Begin Sidebar -->
+    			<div id="recommended-box">
+    				<div id="recommended-box-arrow">&nbsp;</div>
+    				<div id="recommended-box-top">
+    					<div id="recommended-box-bottom">
+							<h4>Blend Your Own Whiskey</h4>
+							<table width="100%" align="center">
+								<tr>
+									<td><div id="smooth_slider" class="taste_slider"></div><strong>Smooth</strong></td>
+									<td><div id="bite_slider" class="taste_slider"></div><strong>Bite</strong></td>
+									<td><div id="sweet_slider" class="taste_slider"></div><strong>Sweet</strong></td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<button id="blend-it-button" type="submit" class="btn-search" value="Blend">
+											<span>Blend It!</span>
+										</button>
+									</td>
+								</tr>
+							</table>
+    					</div>
+    				</div>
+    			</div>
+    			<!-- End Sidebar -->
+				<div id="main-search" class="ui-corner-all">
+					<form id="main_search" method="GET" action="/search/">
+						Search For A Whiskey
+						<input type="text" class="search" name="q">
+	                    <button type="submit" class="btn-search" value="Search">
+	                        <span>Search</span>
+	                    </button>
+					</form>
+				</div>
+    			<!-- Begin Content -->
+    			<div id="content" class="home-content">
+    				<div class="post cf">
+    					<div class="post-left-side">
+    						<div class="post-img">
+    							<a class="whiskey_url" whiskey_id="{{ feature.pk }}" href="/{{ feature.slug }}/"><img width="200" height="300" class="featured_url" src="{{ MEDIA_URL }}{{ feature.bottle }}" alt="" /></a>
+    						</div>
+    						<div class="raiting-row">
+    							<p class="raiting-stars">{% for star in feature.average_rating_list %}<img src="/static/css/images/full_star.gif" alt="" />&nbsp;{% endfor %}</p>
+    							<p><span class="reviews_count">{{ feature.reviews.count }}</span> Review<span class="reviews_plural">{{ feature.reviews.count|pluralize }}</span> / <span class="drinkers_count">{{ feature.drinkers.count }}</span> Drinker<span class="drinkers_plural">{{ feature.drinkers.count|pluralize }}</span></p>
+								<h4><a href="javascript:review({{ feature.pk }});" class="blue-btn we-btn">Add a Review</a></h4>
+    						</div>
+    					</div>
+    					<div class="post-cnt">
+    						<h2 class="graphic-bg"><a class="whiskey_url" href="/{{ feature.slug }}/"><span class="whiskey_name">{{ feature.data.name }}</span></a></h2>
+    						<h3><span class="distillery_name">{{ feature.distillery }}</span> - <a class="category_url" href="{{ feature.category.get_absolute_url }}"><span class="category_name">{{ feature.data.category }}</span></a></h3>
+							<div class="whiskey-metrics ui-corner-all">
+								<ul>
+									<li>Herbs&nbsp;/&nbsp;Spice:&nbsp;{{ feature.data.herbs_spice }}</li>
+									<li>Length&nbsp;of&nbsp;Finish:&nbsp;{{ feature.data.length_of_finish }}</li>
+									<li>Wood:&nbsp;{{ feature.data.wood }}</li>
+									<li>Candy:&nbsp;{{ feature.data.candy }}</li>
+									<li>Smoothness:&nbsp;{{ feature.data.smoothness }}</li>
+									<li>Complexity:&nbsp;{{ feature.data.complexity }}</li>
+									<li>Fruit:&nbsp;{{ feature.data.fruit }}</li>
+									<li>Flowers:&nbsp;{{ feature.data.flowers }}</li>
+								</ul>
+							</div>
+    						<div class="post-entry">
+    							{{ feature.data.description }}
+    						</div>
+    					</div>
+    					<div class="cl">&nbsp;</div>
+    				</div>
+    			</div>
+    			<!-- End Content -->
+    			<!-- former site of sidebar -->
+    			<div class="cl">&nbsp;</div>
+    		</div>
+    		<!-- End Main -->
+    	</div>
+    	<!-- End Shell -->
+    </div>
+	<div id="review_dialog"></div>
+    <!-- End Main Holder -->
+
+{% endblock %}
+
+{% block bottom %}
+    <!-- Begin Bottom Holder -->
+    <div id="bottom-holder">
+    	<!-- Begin Shell -->
+    	<div class="shell">
+    		<!-- Begin Content Bottom -->
+    		<div id="main-bottom">
+    			<div class="cl">&nbsp;</div>
+    			<div class="bottom-content">
+					<div id="related_whiskey">
+						<h5>Getting Similar Whiskies...<img src="{{ STATIC_URL }}css/images/ajax-loader.gif"></h5>
+					</div>
+					<div id='recommended_whiskey'>
+						<h5>Getting Whiskies Recommended for you...<img src="{{ STATIC_URL }}css/images/ajax-loader.gif"></h5>
+					</div>
+    			</div>
+    			<div class="cl">&nbsp;</div>
+    		</div>
+    		<!-- End Content Bottom -->
+    	</div>
+    	<!-- End Shell -->
+    </div>
+    <!-- End Bottom Holder -->
+{% endblock %}
+
+{% block body_scripts %}
+	<script type="text/javascript">
+		function whiskey_by_attributes() {
+			var smooth = $('#smooth_slider').slider('value');
+			var bite = $('#bite_slider').slider('value');
+			var sweet = $('#sweet_slider').slider('value');
+			
+			document.location = '/?smooth='+smooth+'&bite='+bite+'&sweet='+sweet;
+		}
+	
+		$(function(){
+			$('#smooth_slider').slider({
+				orientation:'vertical',
+				range:'min',
+				min:0,
+				max:100,
+				value:50,
+			});
+			
+			$('#bite_slider').slider({
+				orientation:'vertical',
+				range:'min',
+				min:0,
+				max:100,
+				value:50,
+			});
+			
+			$('#sweet_slider').slider({
+				orientation:'vertical',
+				range:'min',
+				min:0,
+				max:100,
+				value:50,
+			});
+			
+			$('#blend-it-button').click(function(){
+				whiskey_by_attributes();
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			// todo create profile
+			$('#related_whiskey').load('/related/{{ feature.pk }}/');
+			$('#recommended_whiskey').load('/recommended/');
+		});
+	</script>
+{% endblock %}

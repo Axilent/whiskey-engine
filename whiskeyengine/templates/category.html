@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block main %}
+<!-- Begin Main Holder  -->
+<div id="main-holder">
+	<!-- Begin Shell -->
+	<div class="shell">
+		<!-- Begin Main -->
+		<div id="main">
+			<div class="cl">&nbsp;</div>
+			<!-- Begin Content -->
+			<div id="content" class="home-content">
+				<h2>{{ category.name }}</h2>
+				<ul class="category-list">
+				    {% for whiskey in category.whiskeys.all %}
+				    <li>
+				    	<div class="cl">&nbsp;</div>
+				    	<div class="item-img">
+				    		<a href="{{ whiskey.get_absolute_url }}"><img src="{{ whiskey.category_image.url }}" alt="" /></a>
+				    	</div>
+				    	<div class="item-info">
+				    		<div class="top-row">
+				    			<p>
+				    				<a href="#">{{ whiskey.reviews.count }} Review{{ whiskey.reviews.count|pluralize }}</a>
+				    				<a href="#">{% if whiskey.average_rating_list %}{% for star in whiskey.average_rating_list %}<img src="/static/css/images/full_star.png" alt="" />{% endfor %}{% else %}<img src="/static/css/images/empty_star.png" alt="" />{% endif %}</a>
+				    			</p>
+				    			<h3><a href="{{ whiskey.get_absolute_url }}">{{ whiskey.name }}</a></h3>
+				    		</div>
+				    		<div class="info-cnt">
+				    			{{ whiskey.description }}
+				    		</div>
+				    	</div>
+				    	<div class="cl">&nbsp;</div>
+				    </li>
+				    {% endfor %}
+				</ul>
+			</div>
+			<!-- End Content -->
+			<!-- Begin Sidebar -->
+                    {% include "includes/most_reviewed.html" %}
+			<!-- End Sidebar -->
+			<div class="cl">&nbsp;</div>
+		</div>
+		<!-- End Main -->
+	</div>
+	<!-- End Shell -->
+</div>
+<!-- End Main Holder -->
+{% endblock %}
+{% block bottom %}
+    
+{% endblock %}

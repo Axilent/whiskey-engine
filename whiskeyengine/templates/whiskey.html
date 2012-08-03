@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block main %}
+<!-- Begin Main Holder  -->
+<div id="main-holder">
+	<!-- Begin Shell -->
+	<div class="shell">
+		<!-- Begin Main -->
+		<div id="main">
+			<div class="cl">&nbsp;</div>
+			<!-- Begin Content -->
+			<div id="content">
+				<div class="post">
+					<div class="cl">&nbsp;</div>
+					<div class="post-left-side">
+						<div class="post-img">
+							<img src="{{ whiskey.featured.url }}" alt="" />
+						</div>
+					</div>
+					<div class="post-cnt">
+						<h2>{{ whiskey.name }}</h2>
+						<h3>{{ whiskey.distillery }} - <a href="{{ whiskey.category.get_absolute_url }}">{{ whiskey.category }}</a></h3>
+						<div class="post-entry">
+							{{ whiskey.description }}
+						</div>
+					</div>
+					<div class="cl">&nbsp;</div>
+				</div>
+				<div class="post-raiting">
+					<p class="raiting-stars">{% if whiskey.average_rating_list %}{% for star in whiskey.average_rating_list %}<img src="/static/css/images/full_star.png" alt="" />{% endfor %}{% else %}<img src="/static/css/images/empty_star.png" alt="" />{% endif %}</p>
+					<h2>Reviews {% if reviewable %}<a href="#reviewform">(add a review)</a>{% endif %}</h2>
+                    {% if not whiskey.reviews.count %}
+                    <h3>{{ whiskey.name }} has not yet been reviewed. Be the first to review it!</h3>
+                    {% endif %}
+				</div>
+			</div>
+			<!-- End Content -->
+			<!-- Begin Sidebar -->
+			<div id="silver-box">
+				<div id="silver-box-top">
+					<div id="silver-box-bottom">
+						<div class="silver-raiting">
+							<p>{% if whiskey.average_rating_list %}{% for star in whiskey.average_rating_list %}<img src="/static/css/images/full_star.png" alt="" />{% endfor %}{% else %}<img src="/static/css/images/empty_star.png" alt="" />{% endif %}</p>
+						</div>
+                        {% if shelved %}
+                        <p><input type="button" value="On your shelf" class="blue-btn"></p>
+                        {% else %}
+						<p><form action="/whiskey/{{ whiskey.slug }}/shelve/" method="post"><input id="shelve-input" type="submit" value="Add to your shelf" class="blue-btn"></form></p>
+                        {% endif %}
+                        {% if wished %}
+                        <p><input type="button" value="On your wishlist" class="blue-btn"></p>
+                        {% else %}
+						<p><form action="/whiskey/{{ whiskey.slug }}/wishlist/" method="post"><input id="wishlist-input" type="submit" value="Add to your wishlist" class="blue-btn"></form></p>
+                        {% endif %}
+						<div class="people-likes">
+							<p>{{ whiskey.reviews.count }} Review{{ whiskey.reviews.count|pluralize }}</p>
+							<p>{{ liked }} {{ liked|pluralize:"Person,People" }} Like{{ liked|pluralize:"s," }} This</p>
+						</div>
+						<div class="proposal-holder">
+						    {% if whiskey.cousins.count %}
+							<div class="proposal-box">
+								<h4><span>Also by</span> {{ whiskey.distillery }}</h4>
+								{% for cousin in whiskey.cousins|slice:":5" %}
+								<h5><a href="{{ cousin.get_absolute_url }}">{{ cousin.name }}</a></h5>
+								{% endfor %}
+                                <h5><a href="/search/?q={{ whiskey.distillery }}&models=whiskeyengine.whiskey">More...</a></h5>
+							</div>
+							{% endif %}
+							<div class="proposal-box">
+								<h4><span>Similar to</span> {{ whiskey.name }}</h4>
+								{% for whiskey in recommended %}
+								<h5><a href="{{ whiskey.get_absolute_url }}">{{ whiskey.name }}</a></h5>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Sidebar -->
+			<div class="cl">&nbsp;</div>
+		</div>
+		<!-- End Main -->
+	</div>
+	<!-- End Shell -->
+</div>
+<!-- End Main Holder -->
+{% endblock %}
+
+{% block bottom %}
+<!-- Begin Bottom Holder -->
+<div id="bottom-holder">
+	<!-- Begin Shell -->
+	<div class="shell">
+		<!-- Begin Post Comment -->
+		<div class="post-comments">
+			<ul class="comments-list">
+			    {% for review in whiskey.reviews.all %}
+				<li>
+					<div class="comment-cnt">
+						<div class="comment-top">
+							<div class="comment-bottom">
+								<div class="cl">&nbsp;</div>
+								<div class="comment-user">
+									<div class="user-info">
+										<div class="cl">&nbsp;</div>
+										<div class="user-avatar">
+                                            {% if review.reviewer.pic %}
+											<img src="{{ review.reviewer.review_avatar.url }}" alt="" />
+                                            {% else %}
+                                            <img src="{{ MEDIA_URL }}css/images/no_avatar_found_review.gif" alt="No avatar found"  />
+                                            {% endif %}
+										</div>
+                                        <h3><a href="{% url profiles_profile_detail review.reviewer.user.username %}">{{ review.reviewer }}</a></h3>
+										<p>{{ review.created|timesince }} ago</p>
+                                        <p>{% if review.whiskey.average_rating_list %}{% for star in review.whiskey.average_rating_list %}<img src="/static/css/images/full_star.png" alt="" />{% endfor %}{% else %}<img src="/static/css/images/empty_star.png" alt="" />{% endif %}</p>
+										<div class="cl">&nbsp;</div>
+									</div>
+                                    {% ifequal review.reviewer user.get_profile %}
+                                    {% else %}
+									<!--<div class="opinion-btns">
+										<div class="cl">&nbsp;</div>
+										<a href="#">Disagree</a>
+										<a href="#">Agree</a>
+										<div class="cl">&nbsp;</div>
+									</div> -->
+                                    {% endifequal %}
+								</div>
+								<div class="comment-content">
+									<p>{{ review.comments }}</p>
+								</div>
+								<div class="cl">&nbsp;</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+			{% if reviewable %}
+			<div class="leave-comment-box">
+				<form action="/whiskey/{{ whiskey.slug }}/review/" method="post">
+					<h5><label for="review"><a name="reviewform">Review this Whiskey</a></label></h5>
+					<div class="comment-bg">
+						<textarea name="review" class="field" id="review" cols="0" rows="0"></textarea>
+					</div>
+					<input type="submit" value="Submit" class="submit-btn"/>
+				    <h5>Rate this Whiskey {% include 'includes/stars.html' %}</h5>
+				</form>
+			</div>
+			{% endif %}
+			<div class="cl">&nbsp;</div>
+		</div>
+		<!-- Begin Post Comment -->
+	</div>
+	<!-- End Shell -->
+</div>
+<!-- End Bottom Holder -->
+{% endblock %}
