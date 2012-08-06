@@ -8,9 +8,11 @@ from whiskeyengine.models import *
 import traceback
 #from haystack.query import SearchQuerySet
 from django.conf import settings
-from sharrock.client import HttpClient
+from sharrock.client import HttpClient, ResourceClient
 
 axl = HttpClient('%s/api' % settings.AXILENT_ENDPOINT,'axilent.content','beta3',auth_user=settings.AXILENT_API_KEY)
+content_resource = ResourceClient('%s/api/resource' % settings.AXILENT_ENDPOINT,'axilent.content','beta3','content',auth_user=settings.AXILENT_API_KEY)
+triggers = HttpClient('%s/api' % settings.AXILENT_ENDPOINT,'axilent.triggers','beta3',auth_user=settings.AXILENT_API_KEY)
 
 def home(request,whiskey_slug=None):
     """
@@ -53,29 +55,23 @@ def recommended_whiskey(request):
     """
     Pulls recommended whiskey for the profiled user.
     """
-    recommended = []
-    if dummy_mode:
-        recommended = Whiskey.objects.all().order_by('?')[:3] # Graphstack bypass
-    else:
-        if not request.user.is_anonymous():
-            profile = request.user.get_profile().saaspire_profile
-            recommended = graphstack.get_recommended_whiskies(profile)
+    profile, profile_created = _get_profile(request)
+    recommended = [item['content'] for item in axl.contentchannel(channel='personalized-whiskey',profile=profile)['default']]
     
     c = RequestContext(request)
-    return render_to_response('includes/recommended.html',{'recommended':recommended},context_instance=c)
+    response = render_to_response('includes/recommended.html',{'recommended':recommended},context_instance=c)
+    if profile_created:
+        response.set_cookie('axilent_profile',profile)
+    return response
 
-def related_whiskey(request,whiskey_id):
+def related_whiskey(request,whiskey_key):
     """
     Gets whiskies related to the specified whiskey.
     """
-    whiskey = Whiskey.objects.get(pk=whiskey_id)
-    if dummy_mode:
-        related = Whiskey.objects.all().order_by('?')[:3] # Graphstack bypass
-    else:
-        related = graphstack.get_related_whiskies(whiskey.saaspire_key,profile=graphstack.profile(request))
-    
+    base_whiskey = content_resource.get(params={'content_type_slug':'whiskey','content_key':whiskey_key})
+    related = [item['content'] for item in axl.contentchannel(channel='related-whiskey',basekey=whiskey_key)['default'][:3]]
     c = RequestContext(request)
-    return render_to_response('includes/related.html',{'related':related,'base_whiskey':whiskey},context_instance=c)
+    return render_to_response('includes/related.html',{'related':related,'base_whiskey':base_whiskey},context_instance=c)
 
 def review_whiskey(request,whiskey_id):
     """
@@ -119,4 +115,15 @@ def about_american_whiskey(request):
     """
     return render_to_response('about_american_whiskey.html',{},context_instance=RequestContext(request))
 
+def _get_profile(request):
+    """
+    Gets or creates profile for the request.  Will return the tuple of the profile and flag indicating
+    the profile is new and should be set in the response.
+    """
+    if request.COOKIES.has_key('axilent_profile'):
+        return request.COOKIES['axilent_profile'], False
+    else:
+        profile = triggers.profile()
+        return profile, True
+    
 

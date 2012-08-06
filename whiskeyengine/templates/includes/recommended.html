@@ -9,7 +9,7 @@
 	    	</div>
 	    	<div class="recently-rated-raiting">
 	    		<p>{% for star in whiskey.average_rating_list %}<img src="/static/css/images/full_star.png" alt="" />&nbsp;{% endfor %}</p>
-	    		<h4><a class="recommended-link" whiskey_id="{{ whiskey.pk }}" href="#">{{ whiskey.name }}</a></h4>
+	    		<h4><a class="recommended-link" whiskey_id="{{ whiskey.pk }}" href="#">{{ whiskey.data.name }}</a></h4>
 	    	</div>
 	    </li>
         {% endfor %}
