@@ -22,7 +22,7 @@
                 <div class="post cf">
                     <div class="post-left-side">
                         <div class="post-img">
-                            <a class="whiskey_url" whiskey_id="{{ result.pk }}" href="/{{ result.object.slug }}/">
+                            <a class="whiskey_url" whiskey_id="{{ result.pk }}" href="/whiskey/{{ result.data.slug }}/">
                                 <img width="200" height="300" class="featured_url" src="{{ MEDIA_URL }}{{ result.object.bottle }}" alt="" />
                             </a>
                         </div>
@@ -33,8 +33,8 @@
                         </div>
                     </div>
                     <div class="post-cnt">
-                        <h2 class="graphic-bg"><a class="whiskey_url" href="/{{ result.object.slug }}/"><span class="whiskey_name">{{ result.data.name }}</span></a></h2>
-                        <h3><span class="distillery_name">{{ result.object.distillery }}</span> - <a class="category_url" href="{{ result.object.category.get_absolute_url }}"><span class="category_name">{{ result.object.category }}</span></a></h3>
+                        <h2 class="graphic-bg"><a class="whiskey_url" href="/whiskey/{{ result.data.slug }}/"><span class="whiskey_name">{{ result.data.name }}</span></a></h2>
+                        <h3><a class="category_url" href="{{ result.object.category.get_absolute_url }}"><span class="category_name">{{ result.object.category }}</span></a></h3>
                         <div class="post-entry">
                             {{ result.data.description }}
                         </div>
