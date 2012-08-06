@@ -14,6 +14,12 @@ axl = HttpClient('%s/api' % settings.AXILENT_ENDPOINT,'axilent.content','beta3',
 content_resource = ResourceClient('%s/api/resource' % settings.AXILENT_ENDPOINT,'axilent.content','beta3','content',auth_user=settings.AXILENT_API_KEY)
 triggers = HttpClient('%s/api' % settings.AXILENT_ENDPOINT,'axilent.triggers','beta3',auth_user=settings.AXILENT_API_KEY)
 
+def _convert_value(raw_value):
+    """
+    Converts percentage value to 0.0 to 5.0 range.
+    """
+    return round(float(raw_value) * 0.1) / 2.0
+
 def home(request,whiskey_slug=None):
     """
     Home page.
@@ -22,7 +28,17 @@ def home(request,whiskey_slug=None):
     if whiskey_slug:
         featured_whiskey = axl.getcontentbyuniquefield(content_type='Whiskey',field_name='slug',field_value=whiskey_slug)
     elif 'smooth' in request.GET:
-        pass # TODO
+        smooth = _convert_value(request.GET['smooth'])
+        bite = _convert_value(request.GET['bite'])
+        sweet = _convert_value(request.GET['sweet'])
+        
+        search_results = axl.search(content_types='Whiskey',query='smoothness:%s bite:%s sweet:%s' % (str(smooth),str(bite),str(sweet)))
+        if len(search_results):
+            print 'using search results'
+            featured_whiskey = search_results[0]
+        else:
+            print 'using random whiskey'
+            featured_whiskey = axl.contentchannel(channel='random-whiskey')['default'][0]['content']
     else:
         featured_whiskey = axl.contentchannel(channel='random-whiskey')['default'][0]['content']
     

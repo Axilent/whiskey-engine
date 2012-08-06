@@ -46,7 +46,7 @@
     				<div class="post cf">
     					<div class="post-left-side">
     						<div class="post-img">
-    							<a class="whiskey_url" whiskey_id="{{ feature.pk }}" href="/{{ feature.slug }}/"><img width="200" height="300" class="featured_url" src="{{ MEDIA_URL }}{{ feature.bottle }}" alt="" /></a>
+    							<a class="whiskey_url" whiskey_id="{{ feature.pk }}" href="/whiskey/{{ feature.data.slug }}/"><img width="200" height="300" class="featured_url" src="{{ MEDIA_URL }}{{ feature.bottle }}" alt="" /></a>
     						</div>
     						<div class="raiting-row">
     							<p class="raiting-stars">{% for star in feature.average_rating_list %}<img src="/static/css/images/full_star.gif" alt="" />&nbsp;{% endfor %}</p>
@@ -55,7 +55,7 @@
     						</div>
     					</div>
     					<div class="post-cnt">
-    						<h2 class="graphic-bg"><a class="whiskey_url" href="/{{ feature.slug }}/"><span class="whiskey_name">{{ feature.data.name }}</span></a></h2>
+    						<h2 class="graphic-bg"><a class="whiskey_url" href="/whiskey/{{ feature.data.slug }}/"><span class="whiskey_name">{{ feature.data.name }}</span></a></h2>
     						<h3><a class="category_url" href="{{ feature.category.get_absolute_url }}"><span class="category_name">{{ feature.data.category }}</span></a></h3>
 							<div class="whiskey-metrics ui-corner-all">
 								<ul>
