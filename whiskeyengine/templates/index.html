@@ -48,11 +48,11 @@
     						<div class="post-img">
     							<a class="whiskey_url" whiskey_id="{{ feature.pk }}" href="/whiskey/{{ feature.data.slug }}/"><img width="200" height="300" class="featured_url" src="{{ feature.data.bottle }}" alt="" /></a>
     						</div>
-    						<div class="raiting-row">
-    							<p class="raiting-stars">{% for star in feature.average_rating_list %}<img src="/static/css/images/full_star.gif" alt="" />&nbsp;{% endfor %}</p>
-    							<p><span class="reviews_count">{{ feature.reviews.count }}</span> Review<span class="reviews_plural">{{ feature.reviews.count|pluralize }}</span> / <span class="drinkers_count">{{ feature.drinkers.count }}</span> Drinker<span class="drinkers_plural">{{ feature.drinkers.count|pluralize }}</span></p>
-								{# <h4><a href="javascript:review({{ feature.pk }});" class="blue-btn we-btn">Add a Review</a></h4> #}
-    						</div>
+    						{# <div class="raiting-row"> #}
+    						{#     							<p class="raiting-stars">{% for star in feature.average_rating_list %}<img src="/static/css/images/full_star.gif" alt="" />&nbsp;{% endfor %}</p> #}
+    						{#     							<p><span class="reviews_count">{{ feature.reviews.count }}</span> Review<span class="reviews_plural">{{ feature.reviews.count|pluralize }}</span> / <span class="drinkers_count">{{ feature.drinkers.count }}</span> Drinker<span class="drinkers_plural">{{ feature.drinkers.count|pluralize }}</span></p> #}
+    						 								{# <h4><a href="javascript:review({{ feature.pk }});" class="blue-btn we-btn">Add a Review</a></h4> #}
+    						{#     						</div> #}
     					</div>
     					<div class="post-cnt">
     						<h2 class="graphic-bg"><a class="whiskey_url" href="/whiskey/{{ feature.data.slug }}/"><span class="whiskey_name">{{ feature.data.name }}</span></a></h2>
