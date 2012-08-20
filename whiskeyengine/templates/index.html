@@ -46,12 +46,12 @@
     				<div class="post cf">
     					<div class="post-left-side">
     						<div class="post-img">
-    							<a class="whiskey_url" whiskey_id="{{ feature.pk }}" href="/whiskey/{{ feature.data.slug }}/"><img width="200" height="300" class="featured_url" src="{{ MEDIA_URL }}{{ feature.bottle }}" alt="" /></a>
+    							<a class="whiskey_url" whiskey_id="{{ feature.pk }}" href="/whiskey/{{ feature.data.slug }}/"><img width="200" height="300" class="featured_url" src="{{ feature.data.bottle }}" alt="" /></a>
     						</div>
     						<div class="raiting-row">
     							<p class="raiting-stars">{% for star in feature.average_rating_list %}<img src="/static/css/images/full_star.gif" alt="" />&nbsp;{% endfor %}</p>
     							<p><span class="reviews_count">{{ feature.reviews.count }}</span> Review<span class="reviews_plural">{{ feature.reviews.count|pluralize }}</span> / <span class="drinkers_count">{{ feature.drinkers.count }}</span> Drinker<span class="drinkers_plural">{{ feature.drinkers.count|pluralize }}</span></p>
-								<h4><a href="javascript:review({{ feature.pk }});" class="blue-btn we-btn">Add a Review</a></h4>
+								{# <h4><a href="javascript:review({{ feature.pk }});" class="blue-btn we-btn">Add a Review</a></h4> #}
     						</div>
     					</div>
     					<div class="post-cnt">
@@ -59,14 +59,16 @@
     						<h3><a class="category_url" href="{{ feature.category.get_absolute_url }}"><span class="category_name">{{ feature.data.category }}</span></a></h3>
 							<div class="whiskey-metrics ui-corner-all">
 								<ul>
-									<li>Herbs&nbsp;/&nbsp;Spice:&nbsp;{{ feature.data.herbs_spice }}</li>
-									<li>Length&nbsp;of&nbsp;Finish:&nbsp;{{ feature.data.length_of_finish }}</li>
-									<li>Wood:&nbsp;{{ feature.data.wood }}</li>
-									<li>Candy:&nbsp;{{ feature.data.candy }}</li>
-									<li>Smoothness:&nbsp;{{ feature.data.smoothness }}</li>
-									<li>Complexity:&nbsp;{{ feature.data.complexity }}</li>
-									<li>Fruit:&nbsp;{{ feature.data.fruit }}</li>
-									<li>Flowers:&nbsp;{{ feature.data.flowers }}</li>
+									{# <li>Herbs&nbsp;/&nbsp;Spice:&nbsp;{{ feature.data.herbs_spice }}</li> #}
+									{# 									<li>Length&nbsp;of&nbsp;Finish:&nbsp;{{ feature.data.length_of_finish }}</li> #}
+									{# 									<li>Wood:&nbsp;{{ feature.data.wood }}</li> #}
+									{# 									<li>Candy:&nbsp;{{ feature.data.candy }}</li> #}
+									<li>Smooth:&nbsp;{{ feature.data.smoothness|floatformat:2 }}</li>
+									<li>Bite:&nbsp;{{ feature.data.bite|floatformat:2 }}</li>
+									<li>Sweet:&nbsp;{{ feature.data.sweet|floatformat:2 }}</li>
+									{# <li>Complexity:&nbsp;{{ feature.data.complexity }}</li> #}
+									{# 									<li>Fruit:&nbsp;{{ feature.data.fruit }}</li> #}
+									{# 									<li>Flowers:&nbsp;{{ feature.data.flowers }}</li> #}
 								</ul>
 							</div>
     						<div class="post-entry">
@@ -101,9 +103,9 @@
 					<div id="related_whiskey">
 						<h5>Getting Similar Whiskies...<img src="{{ STATIC_URL }}css/images/ajax-loader.gif"></h5>
 					</div>
-					<div id='recommended_whiskey'>
-						<h5>Getting Whiskies Recommended for you...<img src="{{ STATIC_URL }}css/images/ajax-loader.gif"></h5>
-					</div>
+					{# <div id='recommended_whiskey'> #}
+					{# 						<h5>Getting Whiskies Recommended for you...<img src="{{ STATIC_URL }}css/images/ajax-loader.gif"></h5> #}
+					{# 					</div> #}
     			</div>
     			<div class="cl">&nbsp;</div>
     		</div>

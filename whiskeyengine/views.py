@@ -139,7 +139,7 @@ def _get_profile(request):
     if request.COOKIES.has_key('axilent_profile'):
         return request.COOKIES['axilent_profile'], False
     else:
-        profile = triggers.profile()
+        profile = triggers.profile()['profile']
         return profile, True
     
 

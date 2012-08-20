@@ -23,14 +23,14 @@
                     <div class="post-left-side">
                         <div class="post-img">
                             <a class="whiskey_url" whiskey_id="{{ result.pk }}" href="/whiskey/{{ result.data.slug }}/">
-                                <img width="200" height="300" class="featured_url" src="{{ MEDIA_URL }}{{ result.object.bottle }}" alt="" />
+                                <img width="200" height="300" class="featured_url" src="{{ result.data.bottle }}" alt="" />
                             </a>
                         </div>
-                        <div class="raiting-row">
-                            <p class="raiting-stars">{% for star in result.object.average_rating_list %}<img src="/static/css/images/full_star.gif" alt="" />&nbsp;{% endfor %}</p>
-                            <p><span class="reviews_count">{{ result.object.reviews.count }}</span> Review<span class="reviews_plural">{{ result.object.reviews.count|pluralize }}</span> / <span class="drinkers_count">{{ result.object.drinkers.count }}</span> Drinker<span class="drinkers_plural">{{ whiskey.drinkers.count|pluralize }}</span></p>
-                            <h4><a href="javascript:review({{ result.pk }});" class="blue-btn we-btn">Add a Review</a></h4>
-                        </div>
+                        {# <div class="raiting-row"> #}
+                        {#                             <p class="raiting-stars">{% for star in result.object.average_rating_list %}<img src="/static/css/images/full_star.gif" alt="" />&nbsp;{% endfor %}</p> #}
+                        {#                             <p><span class="reviews_count">{{ result.object.reviews.count }}</span> Review<span class="reviews_plural">{{ result.object.reviews.count|pluralize }}</span> / <span class="drinkers_count">{{ result.object.drinkers.count }}</span> Drinker<span class="drinkers_plural">{{ whiskey.drinkers.count|pluralize }}</span></p> #}
+                        {#                             <h4><a href="javascript:review({{ result.pk }});" class="blue-btn we-btn">Add a Review</a></h4> #}
+                        {#                         </div> #}
                     </div>
                     <div class="post-cnt">
                         <h2 class="graphic-bg"><a class="whiskey_url" href="/whiskey/{{ result.data.slug }}/"><span class="whiskey_name">{{ result.data.name }}</span></a></h2>
@@ -42,7 +42,12 @@
                 </div>
                 {% endfor %}
                 {% else %}
-                <p>Sorry, no matching whiskeys were found.</p>
+				<div id="content" class="home-content">
+					<div class="post-left-side">
+                		<h3>Sorry, no matching whiskeys were found.</h3>
+						<br/><br/>
+					</div>
+				</div>
                 {% endif %}
             </div>
         </div>
