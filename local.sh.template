@@ -7,6 +7,9 @@ export AXILENT_DOCS_API_KEY = '<your-axilent-api-key>'
 export AWS_ACCESS_KEY_ID='<your-aws-access-key-id>'
 export AWS_SECRET_ACCESS_KEY='<your-aws-secret-access-key>'
 
+# Mobile Site Switch - uncomment for mobile site
+# export WHISKEY_URLCONF='whiskeyengine.mobile_urls'
+
 # Run
 ./manage.py $1 $2 $3
 

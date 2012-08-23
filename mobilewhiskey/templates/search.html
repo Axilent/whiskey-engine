@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+<div data-role="navbar" data-iconpos="left">
+    <ul>
+        <li>
+            <a href="/" data-theme="a" data-icon="star">
+                Featured
+            </a>
+        </li>
+        <li>
+            <a href="/blend/" data-theme="a" data-icon="gear">
+                Blend It!
+            </a>
+        </li>
+        <li>
+            <a href="/search/" data-theme="a" data-icon="search" class="ui-btn-active ui-state-persist">
+                Search
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock navbar %}
+
+{% block content %}
+<form action="/search/">
+	<div data-role="fieldcontain">
+	    <fieldset data-role="controlgroup">
+	        <label for="searchinput2">
+	        </label>
+	        <input name="q" id="searchinput2" placeholder="Search for Whiskey" value="" type="search" />
+	    </fieldset>
+	</div>
+</form>
+{% if results %}
+<table>
+	{% for whiskey in results %}
+	<tr>
+		<td><h3><a class="ui-link" href="/whiskey/{{ whiskey.data.slug }}/">{{ whiskey.data.name }}</a></h3></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}
+{% endblock content %}

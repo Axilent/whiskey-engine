@@ -77,7 +77,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'whiskeyengine.urls'
+ROOT_URLCONF = os.environ.get('WHISKEY_URLCONF','whiskeyengine.urls')
+
+WHISKEY_APP = os.environ.get('WHISKEY_APP','whiskeyengine')
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -87,7 +89,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'gunicorn',
-    'whiskeyengine',
+    WHISKEY_APP,
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(

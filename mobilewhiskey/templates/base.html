@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/themes/whiskeyengine.min.css" />
+        <style>
+            /* App custom styles */
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js">
+        </script>
+    </head>
+    <body>
+        <!-- Home -->
+        <div data-role="page" id="page1">
+            <div data-theme="a" data-role="header" data-position="fixed">
+                <h1>
+                    Whiskey Engine
+                </h1>
+				{% block navbar %}
+                <div data-role="navbar" data-iconpos="left">
+                    <ul>
+                        <li>
+                            <a href="/" id="featured_link" data-theme="a" data-icon="star" class="ui-btn-active ui-state-persist">
+                                Featured
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/blend/" data-theme="a" data-icon="gear">
+                                Blend It!
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/search/" data-theme="a" data-icon="search">
+                                Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+				{% endblock %}
+            </div>
+            <div data-role="content" style="padding: 15px">
+				{% block content %}
+                {# content goes here #}
+				{% endblock %}
+            </div>
+        </div>
+        <script>
+		{% block scripts %}
+            //App custom javascript
+		{% endblock scripts %}
+        </script>
+    </body>
+</html>

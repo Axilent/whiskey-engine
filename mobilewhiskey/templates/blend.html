@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+<div data-role="navbar" data-iconpos="left">
+    <ul>
+        <li>
+            <a href="/" data-theme="a" data-icon="star">
+                Featured
+            </a>
+        </li>
+        <li>
+            <a href="/blend/" data-theme="a" data-icon="gear" class="ui-btn-active ui-state-persist">
+                Blend It!
+            </a>
+        </li>
+        <li>
+            <a href="/search/" data-theme="a" data-icon="search">
+                Search
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock navbar %}
+
+{% block content %}
+<form action="/blend/" method="POST">
+    <div data-role="fieldcontain">
+        <fieldset data-role="controlgroup">
+            <label for="slider1">
+                Smooth
+            </label>
+            <input type="range" name="smooth" id="slider1" value="50" min="0" max="100" data-highlight="true" />
+        </fieldset>
+    </div>
+	<div data-role="fieldcontain">
+	    <fieldset data-role="controlgroup">
+	        <label for="slider2">
+	            Bite
+	        </label>
+	        <input type="range" name="bite" id="slider2" value="50" min="0" max="100" data-highlight="true" />
+	    </fieldset>
+	</div>
+	<div data-role="fieldcontain">
+	    <fieldset data-role="controlgroup">
+	        <label for="slider3">
+	            Sweet
+	        </label>
+	        <input type="range" name="sweet" id="slider3" value="50" min="0" max="100" data-highlight="true" />
+	    </fieldset>
+	</div>
+	<input type="submit" data-theme="a" data-icon="gear" data-iconpos="left" value="Blend It!" />
+</form>
+{% endblock content %}

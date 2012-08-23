@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>
+    {{ feature.data.name }}
+</h2>
+<div style="">
+	<img style="width: 99px; height: 150px; float:left; margin:5px" src="{{ feature.data.thumb }}" />
+	{{ feature.data.description }}
+</div>
+<div data-role="collapsible-set" data-theme="" data-content-theme="">
+    <div data-role="collapsible" data-collapsed="false">
+        <h3>
+            Related
+        </h3>
+        <div class="ui-grid-b">
+			{% for whiskey in related %}
+			<div class="{% cycle 'ui-block-a' 'ui-block-b' 'ui-block-c' %}">
+				<div style="">
+					<a href="/whiskey/{{ whiskey.data.slug }}/"><img style="width: 89px; height: 140px" src="{{ whiskey.data.thumb }}" /></a>
+				</div>
+				<h5>
+					<a href="/whiskey/{{ whiskey.data.slug }}/">{{ whiskey.data.name }}</a>
+				</h5>
+			</div>
+			{% endfor %}
+        </div>
+                        
+    </div>
+    <div data-role="collapsible-set" data-theme="" data-content-theme="">
+        <div data-role="collapsible" data-collapsed="true">
+            <h3>
+                Taste Profile
+            </h3>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <h4>
+                        Smooth
+                    </h4>
+                </div>
+                <div class="ui-block-b">
+					<h4>{{ feature.data.smoothness|floatformat:2 }}</h4>
+                </div>
+                <div class="ui-block-a">
+                    <h4>
+                        Bite
+                    </h4>
+                </div>
+                <div class="ui-block-b">
+					<h4>{{ feature.data.bite|floatformat:2 }}</h4>
+                </div>
+                <div class="ui-block-a">
+                    <h4>
+                        Sweet
+                    </h4>
+                </div>
+                <div class="ui-block-b">
+					<h4>{{ feature.data.sweet|floatformat:2 }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+$(function(){
+	$('#featured_link').click(function(e){
+		window.location.reload();
+		return false;
+	});
+});
+{% endblock scripts %}
