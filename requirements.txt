@@ -3,8 +3,10 @@ Markdown==2.1.1
 -e git://github.com/Axilent/sharrock@aeb9efd86469072b4501db7d8281e9b337841f51#egg=Sharrock-dev
 South==0.7.5
 distribute==0.6.27
+dj-database-url==0.2.1
 gevent==0.13.7
 greenlet==0.4.0
 gunicorn==0.14.3
 httplib2==0.7.4
+psycopg2==2.4.5
 wsgiref==0.1.2

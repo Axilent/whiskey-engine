@@ -37,6 +37,13 @@ DATABASES = {
     }
 }
 
+# ===============
+# For Heroku DB =
+# ===============
+import dj_database_url
+# override database name above
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+
 if 'PYTHONHOME' in os.environ:
     #default_pwd = os.environ['PYTHONHOME']
     default_pwd = '/app/'
