@@ -11,7 +11,10 @@ ENV_AXILENT_LIBRARY_KEY = os.environ.get('AXILENT_LIBRARY_KEY','')
 ENV_AXILENT_PRODUCTION_KEY = os.environ.get('AXILENT_PRODUCTION_KEY','')
 ENV_AXILENT_ENDPOINT = os.environ.get('AXILENT_ENDPOINT','https://www.axilent.net')
 
-DEBUG = ENV_DEBUG
+if ENV_DEBUG == 'False' or not ENV_DEBUG:
+    DEBUG = False
+else:
+    DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 STATIC_URL = '/static/'
