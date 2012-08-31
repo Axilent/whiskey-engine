@@ -74,7 +74,7 @@ h5 { font-size: 12px; line-height: 18px; }
 
 #header-holder,
 
-#header-holder .shell { background: url(axilent_whiskey_engine_static/css/images/header-bg.gif) repeat-x 0 0; height: 103px; }
+#header-holder .shell { background: url(/axilent_whiskey_engine_static/css/images/header-bg.gif) repeat-x 0 0; height: 103px; }
 
 
 
@@ -98,9 +98,9 @@ h5 { font-size: 12px; line-height: 18px; }
 
 #search-form input { float: left; display: inline; }
 
-#search-form .field { border: 0; background: url(axilent_whiskey_engine_static/css/images/search-field.gif) no-repeat 0 0; width: 135px; padding: 3px 5px; height: 16px;	}
+#search-form .field { border: 0; background: url(/axilent_whiskey_engine_static/css/images/search-field.gif) no-repeat 0 0; width: 135px; padding: 3px 5px; height: 16px;	}
 
-#search-form .search-btn { background-image: url(axilent_whiskey_engine_static/css/images/search-btn.gif); width: 46px; height: 21px; }
+#search-form .search-btn { background-image: url(/axilent_whiskey_engine_static/css/images/search-btn.gif); width: 46px; height: 21px; }
 
 
 
@@ -114,7 +114,7 @@ h5 { font-size: 12px; line-height: 18px; }
 
 h1#logo { width: 428px; float: left; display: inline; position: relative; margin-bottom: -4px; }
 
-h1#logo a { display: block; background: url(axilent_whiskey_engine_static/css/images/logo.gif); height: 65px; }
+h1#logo a { display: block; background: url(/axilent_whiskey_engine_static/css/images/logo.gif); height: 65px; }
 
 
 
@@ -126,7 +126,7 @@ h1#logo a { display: block; background: url(axilent_whiskey_engine_static/css/im
 
 #navigation ul li.last { padding-right: 0; }
 
-#navigation ul li a { float: left; font-family: "Lucida Grande", "Trebuchet MS", sans-serif; background: url(axilent_whiskey_engine_static/css/images/nav-bg.gif) repeat-x 0 -200px; line-height: 30px; }
+#navigation ul li a { float: left; font-family: "Lucida Grande", "Trebuchet MS", sans-serif; background: url(/axilent_whiskey_engine_static/css/images/nav-bg.gif) repeat-x 0 -200px; line-height: 30px; }
 
 #navigation ul li a:hover,
 
@@ -178,7 +178,7 @@ h1#logo a { display: block; background: url(axilent_whiskey_engine_static/css/im
 
 #search-results .post-cnt{ width: 500px; }
 
-.post-cnt h2 { background: url(axilent_whiskey_engine_static/css/images/title-bg.gif) no-repeat right -200px; display: inline-block; padding-right: 40px; margin-bottom: 5px; *display: inline; *zoom: 1; }
+.post-cnt h2 { background: url(/axilent_whiskey_engine_static/css/images/title-bg.gif) no-repeat right -200px; display: inline-block; padding-right: 40px; margin-bottom: 5px; *display: inline; *zoom: 1; }
 
 .post-cnt h2.graphic-bg { background-position: right center; }
 
@@ -192,13 +192,13 @@ h1#logo a { display: block; background: url(axilent_whiskey_engine_static/css/im
 
 
 
-#recommended-box { width: 240px; float: right; display: inline; background: url(axilent_whiskey_engine_static/css/images/recommended-cnt.gif) repeat-y 0 0; height: 100%; position: relative; }
+#recommended-box { width: 240px; float: right; display: inline; background: url(/axilent_whiskey_engine_static/css/images/recommended-cnt.gif) repeat-y 0 0; height: 100%; position: relative; }
 
-#recommended-box-arrow { background: url(axilent_whiskey_engine_static/css/images/recommended-arrow.gif) no-repeat 0 0; position: absolute; width: 261px; height: 42px; left: -21px; top: 45%; z-index: 1; }
+#recommended-box-arrow { background: url(/axilent_whiskey_engine_static/css/images/recommended-arrow.gif) no-repeat 0 0; position: absolute; width: 261px; height: 42px; left: -21px; top: 45%; z-index: 1; }
 
-#recommended-box-top { width: 240px; background: url(axilent_whiskey_engine_static/css/images/recommended-top.gif) no-repeat 0 0; position: relative; z-index: 2; }
+#recommended-box-top { width: 240px; background: url(/axilent_whiskey_engine_static/css/images/recommended-top.gif) no-repeat 0 0; position: relative; z-index: 2; }
 
-#recommended-box-bottom { background: url(axilent_whiskey_engine_static/css/images/recommended-bottom.gif) no-repeat 0 bottom; padding: 23px 20px 25px 21px; text-align: center;
+#recommended-box-bottom { background: url(/axilent_whiskey_engine_static/css/images/recommended-bottom.gif) no-repeat 0 bottom; padding: 23px 20px 25px 21px; text-align: center;
 
 }
 
@@ -206,17 +206,17 @@ h1#logo a { display: block; background: url(axilent_whiskey_engine_static/css/im
 
 
 
-.recent-recommended { background: url(axilent_whiskey_engine_static/css/images/recent-recommended.gif) no-repeat center 0; padding-top: 15px; text-align: center; font-size: 14px; line-height: 24px; color: #495e71; }
+.recent-recommended { background: url(/axilent_whiskey_engine_static/css/images/recent-recommended.gif) no-repeat center 0; padding-top: 15px; text-align: center; font-size: 14px; line-height: 24px; color: #495e71; }
 
 
 
-.pour-btn { font-size: 0; line-height: 0; text-indent: -4000px;display: block; background: url(axilent_whiskey_engine_static/css/images/pour-btn.gif) no-repeat 0 0; width: 197px; height: 94px; margin-bottom: 25px; }
+.pour-btn { font-size: 0; line-height: 0; text-indent: -4000px;display: block; background: url(/axilent_whiskey_engine_static/css/images/pour-btn.gif) no-repeat 0 0; width: 197px; height: 94px; margin-bottom: 25px; }
 
 
 
 #bottom-holder,
 
-#bottom-holder .shell { background: #ede0d7 url(axilent_whiskey_engine_static/css/images/bottom-bg.gif) repeat-x 0 0; }
+#bottom-holder .shell { background: #ede0d7 url(/axilent_whiskey_engine_static/css/images/bottom-bg.gif) repeat-x 0 0; }
 
 #bottom-holder .shell { padding: 20px 0 50px 0; }
 
@@ -232,7 +232,7 @@ ul.recently-rated-list li { float: left; display: inline; text-align: center; pa
 
 ul.recently-rated-list li .recently-rated-img {  }
 
-ul.recently-rated-list li .recently-rated-img img { background: url(axilent_whiskey_engine_static/css/images/img-bg.gif) no-repeat 0 0; padding: 2px;  }
+ul.recently-rated-list li .recently-rated-img img { background: url(/axilent_whiskey_engine_static/css/images/img-bg.gif) no-repeat 0 0; padding: 2px;  }
 
 ul.recently-rated-list li h4 { font-size: 12px; }
 
@@ -250,7 +250,7 @@ ul.recently-rated-list li h4 { font-size: 12px; }
 
 .bottom-sidebar { float: right; display: inline; width: 237px; padding-right: 10px; }
 
-.bottom-sidebar h4 { background: url(axilent_whiskey_engine_static/css/images/bottom-graphic.gif) no-repeat 0 5px; padding-left: 40px; }
+.bottom-sidebar h4 { background: url(/axilent_whiskey_engine_static/css/images/bottom-graphic.gif) no-repeat 0 5px; padding-left: 40px; }
 
 
 
@@ -266,7 +266,7 @@ ul.recently-reviewed li p { padding-bottom: 0; }
 
 .reviewed-img { float: left; display: inline; padding-right: 10px; height: 100%; }
 
-.reviewed-img img { display: block; background: url(axilent_whiskey_engine_static/css/images/bottom-sidebar-img-bg.gif) no-repeat 0 0; padding: 1px; }
+.reviewed-img img { display: block; background: url(/axilent_whiskey_engine_static/css/images/bottom-sidebar-img-bg.gif) no-repeat 0 0; padding: 1px; }
 
 
 
@@ -292,15 +292,15 @@ ul.recently-reviewed li p { padding-bottom: 0; }
 
 
 
-#silver-box { width: 170px; float: right; display: inline; background: url(axilent_whiskey_engine_static/css/images/silver-box-cnt.gif) repeat-y 0 0; margin-bottom: 20px; }
+#silver-box { width: 170px; float: right; display: inline; background: url(/axilent_whiskey_engine_static/css/images/silver-box-cnt.gif) repeat-y 0 0; margin-bottom: 20px; }
 
-#silver-box-top { background: url(axilent_whiskey_engine_static/css/images/silver-box-top.gif) no-repeat 0 0; width: 170px; }
+#silver-box-top { background: url(/axilent_whiskey_engine_static/css/images/silver-box-top.gif) no-repeat 0 0; width: 170px; }
 
-#silver-box-bottom { background: url(axilent_whiskey_engine_static/css/images/silver-box-bottom.gif) no-repeat 0 bottom; padding: 30px 13px 15px; text-align: center; }
+#silver-box-bottom { background: url(/axilent_whiskey_engine_static/css/images/silver-box-bottom.gif) no-repeat 0 bottom; padding: 30px 13px 15px; text-align: center; }
 
 
 
-a.blue-btn { display: block; background: url(axilent_whiskey_engine_static/css/images/blue-btn.gif) no-repeat 0 0; width: 143px; height: 22px; margin: 10px  auto; font-family: Georgia, serif; line-height: 22px; color: #fff; font-weight: bold; }
+a.blue-btn { display: block; background: url(/axilent_whiskey_engine_static/css/images/blue-btn.gif) no-repeat 0 0; width: 143px; height: 22px; margin: 10px  auto; font-family: Georgia, serif; line-height: 22px; color: #fff; font-weight: bold; }
 
 a.blue-btn:hover { text-decoration: none; }
 
@@ -308,13 +308,13 @@ a.blue-btn:hover { text-decoration: none; }
 
 .people-likes { padding-left: 2px; }
 
-.people-likes p { background: url(axilent_whiskey_engine_static/css/images/people-stats-bg.gif) no-repeat 0 0; margin-bottom: 12px; width: 134px; }
+.people-likes p { background: url(/axilent_whiskey_engine_static/css/images/people-stats-bg.gif) no-repeat 0 0; margin-bottom: 12px; width: 134px; }
 
 
 
 .proposal-box { padding-bottom: 15px; }
 
-.proposal-box h4 { background: url(axilent_whiskey_engine_static/css/images/graphics.gif) no-repeat 0 8px; color: #585858; padding-bottom: 10px; }
+.proposal-box h4 { background: url(/axilent_whiskey_engine_static/css/images/graphics.gif) no-repeat 0 8px; color: #585858; padding-bottom: 10px; }
 
 .proposal-box h4 span { font-size: 12px; display: block; color: #585858; font-weight: normal; }
 
@@ -334,19 +334,19 @@ ul.comments-list li { padding-bottom: 10px; }
 
 
 
-ul.comments-list li .comment-cnt { width: 950px; background: url(axilent_whiskey_engine_static/css/images/odd-cnt.gif) repeat-y 0 0; height: 100%;  }
+ul.comments-list li .comment-cnt { width: 950px; background: url(/axilent_whiskey_engine_static/css/images/odd-cnt.gif) repeat-y 0 0; height: 100%;  }
 
-ul.comments-list li .comment-top { width: 950px; background: url(axilent_whiskey_engine_static/css/images/odd-top.gif) no-repeat 0 0; }
+ul.comments-list li .comment-top { width: 950px; background: url(/axilent_whiskey_engine_static/css/images/odd-top.gif) no-repeat 0 0; }
 
-ul.comments-list li .comment-bottom { background: url(axilent_whiskey_engine_static/css/images/odd-bottom.gif) no-repeat 0 bottom; padding: 10px 20px 20px 20px; }
+ul.comments-list li .comment-bottom { background: url(/axilent_whiskey_engine_static/css/images/odd-bottom.gif) no-repeat 0 bottom; padding: 10px 20px 20px 20px; }
 
 
 
-ul.comments-list li .even-comment { background-image: url(axilent_whiskey_engine_static/css/images/even-cnt.gif) !important; }
+ul.comments-list li .even-comment { background-image: url(/axilent_whiskey_engine_static/css/images/even-cnt.gif) !important; }
 
-ul.comments-list li .even-comment .comment-top { background-image: url(axilent_whiskey_engine_static/css/images/even-top.gif) !important; }
+ul.comments-list li .even-comment .comment-top { background-image: url(/axilent_whiskey_engine_static/css/images/even-top.gif) !important; }
 
-ul.comments-list li .even-comment .comment-bottom { background-image: url(axilent_whiskey_engine_static/css/images/even-bottom.gif) !important; }
+ul.comments-list li .even-comment .comment-bottom { background-image: url(/axilent_whiskey_engine_static/css/images/even-bottom.gif) !important; }
 
 
 
@@ -362,13 +362,13 @@ ul.comments-list li .user-info p { font-size: 14px; }
 
 ul.comments-list li .user-avatar { float: right; display: inline; padding-left: 15px; }
 
-ul.comments-list li .user-avatar img { display: block; background: url(axilent_whiskey_engine_static/css/images/avatar-bg.gif) no-repeat 0 0; padding: 3px; }
+ul.comments-list li .user-avatar img { display: block; background: url(/axilent_whiskey_engine_static/css/images/avatar-bg.gif) no-repeat 0 0; padding: 3px; }
 
 
 
 ul.comments-list li .opinion-btns { padding-top: 15px; }
 
-.opinion-btns a { float: right; display: inline; background: url(axilent_whiskey_engine_static/css/images/opinion-btn.gif) no-repeat 0 0; font-family: "Lucida Grande", "Trebuchet MS", sans-serif; font-size: 10px; line-height: 17px; width: 54px; text-align: center; color: #fff; margin-left: 3px; }
+.opinion-btns a { float: right; display: inline; background: url(/axilent_whiskey_engine_static/css/images/opinion-btn.gif) no-repeat 0 0; font-family: "Lucida Grande", "Trebuchet MS", sans-serif; font-size: 10px; line-height: 17px; width: 54px; text-align: center; color: #fff; margin-left: 3px; }
 
 a:hover { text-decoration: none; }
 
@@ -378,7 +378,7 @@ ul.comments-list li .comment-content { width: 665px; float: right; display: inli
 
 
 
-.leave-comment-box { background: url(axilent_whiskey_engine_static/css/images/leave-review-bg.gif) no-repeat 0 0; float: right; display: inline; width: 616px; height: 209px; margin-right: 5px; padding: 20px 39px 20px 34px; }
+.leave-comment-box { background: url(/axilent_whiskey_engine_static/css/images/leave-review-bg.gif) no-repeat 0 0; float: right; display: inline; width: 616px; height: 209px; margin-right: 5px; padding: 20px 39px 20px 34px; }
 
 .leave-comment-box h5 { padding-bottom: 5px; }
 
@@ -386,13 +386,13 @@ ul.comments-list li .comment-content { width: 665px; float: right; display: inli
 
 
 
-.comment-bg { background: url(axilent_whiskey_engine_static/css/images/comment-bg.gif) no-repeat 0 0; width: 604px; height: 133px; border: 0; display: block; padding: 5px 6px; margin-bottom: 10px; }
+.comment-bg { background: url(/axilent_whiskey_engine_static/css/images/comment-bg.gif) no-repeat 0 0; width: 604px; height: 133px; border: 0; display: block; padding: 5px 6px; margin-bottom: 10px; }
 
 .comment-bg textarea { border: 0; background: transparent; width: 604px; height: 133px; overflow: auto; }
 
 
 
-.submit-btn { border: 0; background: url(axilent_whiskey_engine_static/css/images/submit.gif) no-repeat 0 0; width: 94px; height: 30px; float: right; display: inline; margin-right: 13px; font-size: 0; line-height: 0; text-indent: -4000px; cursor: pointer; }
+.submit-btn { border: 0; background: url(/axilent_whiskey_engine_static/css/images/submit.gif) no-repeat 0 0; width: 94px; height: 30px; float: right; display: inline; margin-right: 13px; font-size: 0; line-height: 0; text-indent: -4000px; cursor: pointer; }
 
 
 
@@ -404,7 +404,7 @@ ul.category-list li.last { border-bottom: 0; }
 
 ul.category-list li .item-img { float: left; display: inline; padding: 5px 20px 0 0; height: 100%; }
 
-ul.category-list li .item-img img { display: block; background: url(axilent_whiskey_engine_static/css/images/item-img-bg.gif) no-repeat 0 0; padding: 2px; }
+ul.category-list li .item-img img { display: block; background: url(/axilent_whiskey_engine_static/css/images/item-img-bg.gif) no-repeat 0 0; padding: 2px; }
 
 ul.category-list li .top-row { padding-bottom: 10px; }
 
@@ -422,7 +422,7 @@ ul.category-list li .info-cnt { font-weight: bold; }
 
 #most-reviewed-side { width: 170px; float: right; display: inline; padding-top: 50px; }
 
-#most-reviewed-side h4 { background: url(axilent_whiskey_engine_static/css/images/graphic.gif) no-repeat 0 5px; padding-left: 40px; }
+#most-reviewed-side h4 { background: url(/axilent_whiskey_engine_static/css/images/graphic.gif) no-repeat 0 5px; padding-left: 40px; }
 
 #most-reviewed-side ul { padding-top: 15px; list-style-type: none; }
 
@@ -432,7 +432,7 @@ ul.category-list li .info-cnt { font-weight: bold; }
 
 .profile-avatar { float: left; display: inline; width: 110px; }
 
-.profile-avatar img { display: block; background: url(axilent_whiskey_engine_static/css/images/profile-avatar-bg.gif) no-repeat 0 0; padding: 3px; }
+.profile-avatar img { display: block; background: url(/axilent_whiskey_engine_static/css/images/profile-avatar-bg.gif) no-repeat 0 0; padding: 3px; }
 
 .profile-avatar img { display: block; }
 
@@ -444,7 +444,7 @@ ul.category-list li .info-cnt { font-weight: bold; }
 
 
 
-.profile-lists { background: url(axilent_whiskey_engine_static/css/images/bottom-border.gif) repeat-y 295px 0; height: 100%; }
+.profile-lists { background: url(/axilent_whiskey_engine_static/css/images/bottom-border.gif) repeat-y 295px 0; height: 100%; }
 
 .profile-lists .last { margin-right: 0 !important; margin-left: 10px; }
 
@@ -460,13 +460,13 @@ ul.category-list li .info-cnt { font-weight: bold; }
 
 .profile-lists .profile-col ul li a span { float: left; display: inline; background-repeat: no-repeat; background-position: right 0; padding: 0 5px 0 2px; }
 
-.profile-lists .profile-col ul.shelf-list li a { background-image: url(axilent_whiskey_engine_static/css/images/silver-left.gif); }
+.profile-lists .profile-col ul.shelf-list li a { background-image: url(/axilent_whiskey_engine_static/css/images/silver-left.gif); }
 
-.profile-lists .profile-col ul.shelf-list li a span { background-color: #dbdbdd; background-image: url(axilent_whiskey_engine_static/css/images/silver-right.gif); }
+.profile-lists .profile-col ul.shelf-list li a span { background-color: #dbdbdd; background-image: url(/axilent_whiskey_engine_static/css/images/silver-right.gif); }
 
-.profile-lists .profile-col ul.wishlist li a { background-image: url(axilent_whiskey_engine_static/css/images/brown-left.gif); }
+.profile-lists .profile-col ul.wishlist li a { background-image: url(/axilent_whiskey_engine_static/css/images/brown-left.gif); }
 
-.profile-lists .profile-col ul.wishlist li a span { background-color: #e5d2c4; background-image: url(axilent_whiskey_engine_static/css/images/brown-right.gif); }
+.profile-lists .profile-col ul.wishlist li a span { background-color: #e5d2c4; background-image: url(/axilent_whiskey_engine_static/css/images/brown-right.gif); }
 
 
 
@@ -480,11 +480,11 @@ ul.category-list li .info-cnt { font-weight: bold; }
 
 
 
-.review-cnt { background: url(axilent_whiskey_engine_static/css/images/review-cnt.gif) repeat-y 0 0; width: 601px; height: 100%; }
+.review-cnt { background: url(/axilent_whiskey_engine_static/css/images/review-cnt.gif) repeat-y 0 0; width: 601px; height: 100%; }
 
-.review-top { background: url(axilent_whiskey_engine_static/css/images/review-top.gif) no-repeat 0 0; width: 601px; }
+.review-top { background: url(/axilent_whiskey_engine_static/css/images/review-top.gif) no-repeat 0 0; width: 601px; }
 
-.review-bottom { background: url(axilent_whiskey_engine_static/css/images/review-bottom.gif) no-repeat 0 bottom; padding: 10px 12px 5px 40px; }
+.review-bottom { background: url(/axilent_whiskey_engine_static/css/images/review-bottom.gif) no-repeat 0 bottom; padding: 10px 12px 5px 40px; }
 
 .review-bottom .review-info { }
 
@@ -522,7 +522,7 @@ td.center { text-align: center; }
 
 .we-btn { text-align: center; font-size: 16px; }
 
-.blue-btn { border: 0; display: inline; background: url(axilent_whiskey_engine_static/css/images/blue-btn.gif) no-repeat 0 0; width: 143px;  margin: 10px 0; font-family: Georgia, serif; line-height: 22px; color: #fff; font-weight: bold; }
+.blue-btn { border: 0; display: inline; background: url(/axilent_whiskey_engine_static/css/images/blue-btn.gif) no-repeat 0 0; width: 143px;  margin: 10px 0; font-family: Georgia, serif; line-height: 22px; color: #fff; font-weight: bold; 
 
 input.blue-btn { height: 22px; }
 

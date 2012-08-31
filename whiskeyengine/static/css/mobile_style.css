@@ -64,7 +64,7 @@ h4 { font-size: 24px; line-height: 28px; }
 #login-nav ul li { background-color: #712606; display: inline; margin-left: 20px; color: #fefefe; }
 #login-nav ul li a { background-color: #712606; color: #fefefe; }
 
-#header-holder { background-color: #712606; background: url(axilent_whiskey_engine_static/css/images/header-bg.gif) repeat-x 0 0; height: 103px; clear: both; }
+#header-holder { background-color: #712606; background: url(/axilent_whiskey_engine_static/css/images/header-bg.gif) repeat-x 0 0; height: 103px; clear: both; }
 
 #header-holder { display: block; clear: both; }
 #header-holder nav ul li a { color: #000; margin-left: 40px; margin-top: 50px; }
@@ -86,9 +86,9 @@ div.push { height: 8em; }
 
 #search-form { background-color: #712606; float: right; display: inline; padding-top: 5px; padding-right: 10px; font-size: 40px; line-height: 49px; }
 #search-form input { float: left; display: inline; line-height: 48px; font-size: 36px; }
-/*#search-form .field { border: 0; background: url(axilent_whiskey_engine_static/css/images/search-field.gif) no-repeat 0 0; width: 135px; padding: 3px 5px; height: 40px;}*/
+/*#search-form .field { border: 0; background: url(/axilent_whiskey_engine_static/css/images/search-field.gif) no-repeat 0 0; width: 135px; padding: 3px 5px; height: 40px;}*/
 #search-form .field { width: 205px; line-height: 48px; font-size: 36px; }
-/*#search-form .search-btn { background-image: url(axilent_whiskey_engine_static/css/images/search-btn.gif); width: 76px; height: 40px; } */
+/*#search-form .search-btn { background-image: url(/axilent_whiskey_engine_static/css/images/search-btn.gif); width: 76px; height: 40px; } */
 #search-form .search-btn { line-height: 39px; font-size: 30px; font-family: "Luxi Serif", Georgia, serif;} 
 
 .button { border: 0; background-repeat: no-repeat; background-position: 0 0; cursor: pointer; }
@@ -98,14 +98,14 @@ div.push { height: 8em; }
 */
 
 h1#logo { width: 428px; float: left; display: inline; position: relative; margin-bottom: -4px; margin-top: 42px; }
-h1#logo a { display: block; background: url(axilent_whiskey_engine_static/css/images/logo.gif); height: 65px; }
+h1#logo a { display: block; background: url(/axilent_whiskey_engine_static/css/images/logo.gif); height: 65px; }
 
 /*
 #navigation { float: right; display: inline; padding-top: 30px; }
 #navigation ul { list-style-type: none; float: right; display: inline; }
 #navigation ul li { float: left; display: inline; padding-right: 35px; }
 #navigation ul li.last { padding-right: 0; }
-#navigation ul li a { float: left; font-family: "Lucida Grande", "Trebuchet MS", sans-serif; background: url(axilent_whiskey_engine_static/css/images/nav-bg.gif) repeat-x 0 -200px; line-height: 30px; }
+#navigation ul li a { float: left; font-family: "Lucida Grande", "Trebuchet MS", sans-serif; background: url(/axilent_whiskey_engine_static/css/images/nav-bg.gif) repeat-x 0 -200px; line-height: 30px; }
 #navigation ul li a:hover,
 #navigation ul li a.active { background-position: 0 bottom; text-decoration: none; }
 */
@@ -158,7 +158,7 @@ p.drinkers { padding-bottom: 10px; }
 /*
 .post-cnt { background-color: #fff; }
 */
-.post-cnt h2 { background: url(axilent_whiskey_engine_static/css/images/title-bg.gif) no-repeat right -200px; display: inline; padding-right: 40px; }
+.post-cnt h2 { background: url(/axilent_whiskey_engine_static/css/images/title-bg.gif) no-repeat right -200px; display: inline; padding-right: 40px; }
 .post-cnt h2.graphic-bg { background-position: right center; }
 .post-cnt h3 { font-weight: normal; }
 
@@ -167,31 +167,31 @@ p.drinkers { padding-bottom: 10px; }
 */
 p.post-entry { padding-top: 20px; padding-bottom: 15px; }
 
-#recommended-box { width: 240px; float: right; display: inline; background: url(axilent_whiskey_engine_static/css/images/recommended-cnt.gif) repeat-y 0 0; height: 100%; position: relative; }
-#recommended-box-arrow { background: url(axilent_whiskey_engine_static/css/images/recommended-arrow.gif) no-repeat 0 0; position: absolute; width: 261px; height: 42px; left: -21px; top: 45%; z-index: 1; }
-#recommended-box-top { width: 240px; background: url(axilent_whiskey_engine_static/css/images/recommended-top.gif) no-repeat 0 0; position: relative; z-index: 2; }
-#recommended-box-bottom { background: url(axilent_whiskey_engine_static/css/images/recommended-bottom.gif) no-repeat 0 bottom; padding: 23px 20px 25px 21px; text-align: center; }
+#recommended-box { width: 240px; float: right; display: inline; background: url(/axilent_whiskey_engine_static/css/images/recommended-cnt.gif) repeat-y 0 0; height: 100%; position: relative; }
+#recommended-box-arrow { background: url(/axilent_whiskey_engine_static/css/images/recommended-arrow.gif) no-repeat 0 0; position: absolute; width: 261px; height: 42px; left: -21px; top: 45%; z-index: 1; }
+#recommended-box-top { width: 240px; background: url(/axilent_whiskey_engine_static/css/images/recommended-top.gif) no-repeat 0 0; position: relative; z-index: 2; }
+#recommended-box-bottom { background: url(/axilent_whiskey_engine_static/css/images/recommended-bottom.gif) no-repeat 0 bottom; padding: 23px 20px 25px 21px; text-align: center; }
 #recommended-box-bottom h4 { padding-bottom: 10px; }
 
-.recent-recommended { background: url(axilent_whiskey_engine_static/css/images/recent-recommended.gif) no-repeat center 0; padding-top: 15px; text-align: center; font-size: 20px; line-height: 24px; color: #495e71; }
+.recent-recommended { background: url(/axilent_whiskey_engine_static/css/images/recent-recommended.gif) no-repeat center 0; padding-top: 15px; text-align: center; font-size: 20px; line-height: 24px; color: #495e71; }
 
 /*
-.pour-btn { padding: 80px; font-size: 0; line-height: 0; text-indent: -4000px;display: block; background: url(axilent_whiskey_engine_static/css/images/pour-btn_mobile.gif) no-repeat 0 0 center center; width: 800px; height: 382px; margin-bottom: 25px; }
+.pour-btn { padding: 80px; font-size: 0; line-height: 0; text-indent: -4000px;display: block; background: url(/axilent_whiskey_engine_static/css/images/pour-btn_mobile.gif) no-repeat 0 0 center center; width: 800px; height: 382px; margin-bottom: 25px; }
 
 */
 .pour-btn img { padding: 40px 80px; }
 /*
 
 #bottom-holder,
-#bottom-holder .shell { background: #ede0d7 url(axilent_whiskey_engine_static/css/images/bottom-bg.gif) repeat-x 0 0; }
+#bottom-holder .shell { background: #ede0d7 url(/axilent_whiskey_engine_static/css/images/bottom-bg.gif) repeat-x 0 0; }
 #bottom-holder .shell { padding: 20px 0 50px 0; }
 
-#main-bottom { background: url(axilent_whiskey_engine_static/css/images/bottom-border.gif) repeat-y 695px 0; height: 100%; padding: 0 0 0 18px; }
+#main-bottom { background: url(/axilent_whiskey_engine_static/css/images/bottom-border.gif) repeat-y 695px 0; height: 100%; padding: 0 0 0 18px; }
 
 ul.recently-rated-list { list-style-type: none; padding-top: 10px; }
 ul.recently-rated-list li { float: left; display: inline; text-align: center; padding-right: 55px; }
 ul.recently-rated-list li .recently-rated-img { padding-bottom: 5px; }
-ul.recently-rated-list li .recently-rated-img img { background: url(axilent_whiskey_engine_static/css/images/img-bg.gif) no-repeat 0 0; padding: 2px;  }
+ul.recently-rated-list li .recently-rated-img img { background: url(/axilent_whiskey_engine_static/css/images/img-bg.gif) no-repeat 0 0; padding: 2px;  }
 ul.recently-rated-list li h4 { font-size: 12px; }
 
 .bottom-content { width: 695px; float: left; display: inline; }
@@ -200,7 +200,7 @@ ul.recently-rated-list li h4 { font-size: 12px; }
 .recently-rated-raiting p { padding-bottom: 5px; }
 
 .bottom-sidebar { float: right; display: inline; width: 237px; padding-right: 10px; }
-.bottom-sidebar h4 { background: url(axilent_whiskey_engine_static/css/images/bottom-graphic.gif) no-repeat 0 5px; padding-left: 40px; }
+.bottom-sidebar h4 { background: url(/axilent_whiskey_engine_static/css/images/bottom-graphic.gif) no-repeat 0 5px; padding-left: 40px; }
 
 ul.recently-reviewed { padding-top: 10px; list-style-type: none; }
 ul.recently-reviewed li { margin-bottom: 10px; height: 100%; }
@@ -208,7 +208,7 @@ ul.recently-reviewed li h4 { padding-bottom: 2px }
 ul.recently-reviewed li p { padding-bottom: 0; }
 
 .reviewed-img { float: left; display: inline; padding-right: 10px; height: 100%; }
-.reviewed-img img { display: block; background: url(axilent_whiskey_engine_static/css/images/bottom-sidebar-img-bg.gif) no-repeat 0 0; padding: 1px; }
+.reviewed-img img { display: block; background: url(/axilent_whiskey_engine_static/css/images/bottom-sidebar-img-bg.gif) no-repeat 0 0; padding: 1px; }
 
 #footer-holder,
 #footer-holder .shell { background: #712606; height: 90px; } 
@@ -221,18 +221,18 @@ ul.recently-reviewed li p { padding-bottom: 0; }
 .post-raiting .raiting-stars { float: left; display: inline; padding: 0 20px 0 50px; }
 .post-raiting h2 a { font-size: 12px; color: #454545;  }
 
-#silver-box { width: 170px; float: right; display: inline; background: url(axilent_whiskey_engine_static/css/images/silver-box-cnt.gif) repeat-y 0 0; margin-bottom: 20px; }
-#silver-box-top { background: url(axilent_whiskey_engine_static/css/images/silver-box-top.gif) no-repeat 0 0; width: 170px; }
-#silver-box-bottom { background: url(axilent_whiskey_engine_static/css/images/silver-box-bottom.gif) no-repeat 0 bottom; padding: 30px 13px 15px; text-align: center; }
+#silver-box { width: 170px; float: right; display: inline; background: url(/axilent_whiskey_engine_static/css/images/silver-box-cnt.gif) repeat-y 0 0; margin-bottom: 20px; }
+#silver-box-top { background: url(/axilent_whiskey_engine_static/css/images/silver-box-top.gif) no-repeat 0 0; width: 170px; }
+#silver-box-bottom { background: url(/axilent_whiskey_engine_static/css/images/silver-box-bottom.gif) no-repeat 0 bottom; padding: 30px 13px 15px; text-align: center; }
 
-a.blue-btn { display: block; background: url(axilent_whiskey_engine_static/css/images/blue-btn.gif) no-repeat 0 0; width: 143px; height: 22px; margin: 10px 0; font-family: Georgia, serif; line-height: 22px; color: #fff; font-weight: bold; }
+a.blue-btn { display: block; background: url(/axilent_whiskey_engine_static/css/images/blue-btn.gif) no-repeat 0 0; width: 143px; height: 22px; margin: 10px 0; font-family: Georgia, serif; line-height: 22px; color: #fff; font-weight: bold; }
 a.blue-btn:hover { text-decoration: none; }
 
 .people-likes { padding-left: 2px; }
-.people-likes p { background: url(axilent_whiskey_engine_static/css/images/people-stats-bg.gif) no-repeat 0 0; margin-bottom: 12px; width: 134px; }
+.people-likes p { background: url(/axilent_whiskey_engine_static/css/images/people-stats-bg.gif) no-repeat 0 0; margin-bottom: 12px; width: 134px; }
 
 .proposal-box { padding-bottom: 15px; }
-.proposal-box h4 { background: url(axilent_whiskey_engine_static/css/images/graphics.gif) no-repeat 0 8px; color: #585858; padding-bottom: 10px; }
+.proposal-box h4 { background: url(/axilent_whiskey_engine_static/css/images/graphics.gif) no-repeat 0 8px; color: #585858; padding-bottom: 10px; }
 .proposal-box h4 span { font-size: 12px; display: block; color: #585858; font-weight: normal; }
 .proposal-box h5,
 .proposal-box h5 a { color: #3b3b3b; }
@@ -242,13 +242,13 @@ a.blue-btn:hover { text-decoration: none; }
 ul.comments-list { list-style-type: none; padding: 16px 5px 15px; }
 ul.comments-list li { padding-bottom: 10px; }
 
-ul.comments-list li .comment-cnt { width: 950px; background: url(axilent_whiskey_engine_static/css/images/odd-cnt.gif) repeat-y 0 0; height: 100%;  }
-ul.comments-list li .comment-top { width: 950px; background: url(axilent_whiskey_engine_static/css/images/odd-top.gif) no-repeat 0 0; }
-ul.comments-list li .comment-bottom { background: url(axilent_whiskey_engine_static/css/images/odd-bottom.gif) no-repeat 0 bottom; padding: 10px 20px 20px 20px; }
+ul.comments-list li .comment-cnt { width: 950px; background: url(/axilent_whiskey_engine_static/css/images/odd-cnt.gif) repeat-y 0 0; height: 100%;  }
+ul.comments-list li .comment-top { width: 950px; background: url(/axilent_whiskey_engine_static/css/images/odd-top.gif) no-repeat 0 0; }
+ul.comments-list li .comment-bottom { background: url(/axilent_whiskey_engine_static/css/images/odd-bottom.gif) no-repeat 0 bottom; padding: 10px 20px 20px 20px; }
 
-ul.comments-list li .even-comment { background-image: url(axilent_whiskey_engine_static/css/images/even-cnt.gif) !important; }
-ul.comments-list li .even-comment .comment-top { background-image: url(axilent_whiskey_engine_static/css/images/even-top.gif) !important; }
-ul.comments-list li .even-comment .comment-bottom { background-image: url(axilent_whiskey_engine_static/css/images/even-bottom.gif) !important; }
+ul.comments-list li .even-comment { background-image: url(/axilent_whiskey_engine_static/css/images/even-cnt.gif) !important; }
+ul.comments-list li .even-comment .comment-top { background-image: url(/axilent_whiskey_engine_static/css/images/even-top.gif) !important; }
+ul.comments-list li .even-comment .comment-bottom { background-image: url(/axilent_whiskey_engine_static/css/images/even-bottom.gif) !important; }
 
 ul.comments-list li .comment-user { float: left; display: inline; width: 210px; text-align: right; }
 
@@ -256,28 +256,28 @@ ul.comments-list li .user-info h3 { font-weight: normal; }
 ul.comments-list li .user-info p { font-size: 14px; }
 
 ul.comments-list li .user-avatar { float: right; display: inline; padding-left: 15px; }
-ul.comments-list li .user-avatar img { display: block; background: url(axilent_whiskey_engine_static/css/images/avatar-bg.gif) no-repeat 0 0; padding: 3px; }
+ul.comments-list li .user-avatar img { display: block; background: url(/axilent_whiskey_engine_static/css/images/avatar-bg.gif) no-repeat 0 0; padding: 3px; }
 
 ul.comments-list li .opinion-btns { padding-top: 15px; }
-.opinion-btns a { float: right; display: inline; background: url(axilent_whiskey_engine_static/css/images/opinion-btn.gif) no-repeat 0 0; font-family: "Lucida Grande", "Trebuchet MS", sans-serif; font-size: 10px; line-height: 17px; width: 54px; text-align: center; color: #fff; margin-left: 3px; }
+.opinion-btns a { float: right; display: inline; background: url(/axilent_whiskey_engine_static/css/images/opinion-btn.gif) no-repeat 0 0; font-family: "Lucida Grande", "Trebuchet MS", sans-serif; font-size: 10px; line-height: 17px; width: 54px; text-align: center; color: #fff; margin-left: 3px; }
 a:hover { text-decoration: none; }
 
 ul.comments-list li .comment-content { width: 665px; float: right; display: inline; font-family: Georgia, sans-serif; }
 
-.leave-comment-box { background: url(axilent_whiskey_engine_static/css/images/leave-review-bg.gif) no-repeat 0 0; float: right; display: inline; width: 616px; height: 209px; margin-right: 5px; padding: 20px 39px 20px 34px; }
+.leave-comment-box { background: url(/axilent_whiskey_engine_static/css/images/leave-review-bg.gif) no-repeat 0 0; float: right; display: inline; width: 616px; height: 209px; margin-right: 5px; padding: 20px 39px 20px 34px; }
 .leave-comment-box h5 { padding-bottom: 5px; }
 .leave-comment-box h5 a { margin-left: 10px; }
 
-.comment-bg { background: url(axilent_whiskey_engine_static/css/images/comment-bg.gif) no-repeat 0 0; width: 604px; height: 133px; border: 0; display: block; padding: 5px 6px; margin-bottom: 10px; }
+.comment-bg { background: url(/axilent_whiskey_engine_static/css/images/comment-bg.gif) no-repeat 0 0; width: 604px; height: 133px; border: 0; display: block; padding: 5px 6px; margin-bottom: 10px; }
 .comment-bg textarea { border: 0; background: transparent; width: 604px; height: 133px; overflow: auto; }
 
-.submit-btn { border: 0; background: url(axilent_whiskey_engine_static/css/images/submit.gif) no-repeat 0 0; width: 94px; height: 30px; float: right; display: inline; margin-right: 13px; font-size: 0; line-height: 0; text-indent: -4000px; cursor: pointer; }
+.submit-btn { border: 0; background: url(/axilent_whiskey_engine_static/css/images/submit.gif) no-repeat 0 0; width: 94px; height: 30px; float: right; display: inline; margin-right: 13px; font-size: 0; line-height: 0; text-indent: -4000px; cursor: pointer; }
 
 ul.category-list { list-style-type: none; padding-bottom: 25px; }
 ul.category-list li { border-bottom: 1px solid #e5d2c4; padding: 25px 0; }
 ul.category-list li.last { border-bottom: 0; }
 ul.category-list li .item-img { float: left; display: inline; padding: 5px 20px 0 0; height: 100%; }
-ul.category-list li .item-img img { display: block; background: url(axilent_whiskey_engine_static/css/images/item-img-bg.gif) no-repeat 0 0; padding: 2px; }
+ul.category-list li .item-img img { display: block; background: url(/axilent_whiskey_engine_static/css/images/item-img-bg.gif) no-repeat 0 0; padding: 2px; }
 ul.category-list li .top-row { padding-bottom: 10px; }
 ul.category-list li .top-row p { float: right; display: inline; }
 ul.category-list li .top-row p a { margin-right: 5px; }
@@ -286,18 +286,18 @@ ul.category-list li .info-cnt { font-weight: bold; }
 .top-row p a img {vertical-align: top;  }
 
 #most-reviewed-side { width: 170px; float: right; display: inline; padding-top: 50px; }
-#most-reviewed-side h4 { background: url(axilent_whiskey_engine_static/css/images/graphic.gif) no-repeat 0 5px; padding-left: 40px; }
+#most-reviewed-side h4 { background: url(/axilent_whiskey_engine_static/css/images/graphic.gif) no-repeat 0 5px; padding-left: 40px; }
 #most-reviewed-side ul { padding-top: 15px; list-style-type: none; }
 #most-reviewed-side ul li { padding-bottom: 10px;  height: 100%; }
 
 .profile-avatar { float: left; display: inline; width: 110px; }
-.profile-avatar img { display: block; background: url(axilent_whiskey_engine_static/css/images/profile-avatar-bg.gif) no-repeat 0 0; padding: 3px; }
+.profile-avatar img { display: block; background: url(/axilent_whiskey_engine_static/css/images/profile-avatar-bg.gif) no-repeat 0 0; padding: 3px; }
 .profile-avatar img { display: block; }
 
 #profile-page .post-cnt { float: left; display: inline; width: 605px; }
 #profile-page .post-cnt .post-entry { padding-top: 30px; }
 
-.profile-lists { background: url(axilent_whiskey_engine_static/css/images/bottom-border.gif) repeat-y 295px 0; height: 100%; }
+.profile-lists { background: url(/axilent_whiskey_engine_static/css/images/bottom-border.gif) repeat-y 295px 0; height: 100%; }
 .profile-lists .last { margin-right: 0 !important; margin-left: 10px; }
 .profile-lists .profile-col { float: left; display: inline; width: 290px; margin-right: 10px; }
 .profile-lists .profile-col ul { list-style-type: none; padding-top: 10px; }
@@ -305,19 +305,19 @@ ul.category-list li .info-cnt { font-weight: bold; }
 .profile-lists .profile-col ul li a { float: left; display: inline; font-size: 14px; line-height: 22px; background-repeat: no-repeat; background-position: 0 0; padding-left: 3px; }
 .profile-lists .profile-col ul li a:hover { text-decoration: none; }
 .profile-lists .profile-col ul li a span { float: left; display: inline; background-repeat: no-repeat; background-position: right 0; padding: 0 5px 0 2px; }
-.profile-lists .profile-col ul.shelf-list li a { background-image: url(axilent_whiskey_engine_static/css/images/silver-left.gif); }
-.profile-lists .profile-col ul.shelf-list li a span { background-color: #dbdbdd; background-image: url(axilent_whiskey_engine_static/css/images/silver-right.gif); }
-.profile-lists .profile-col ul.wishlist li a { background-image: url(axilent_whiskey_engine_static/css/images/brown-left.gif); }
-.profile-lists .profile-col ul.wishlist li a span { background-color: #e5d2c4; background-image: url(axilent_whiskey_engine_static/css/images/brown-right.gif); }
+.profile-lists .profile-col ul.shelf-list li a { background-image: url(/axilent_whiskey_engine_static/css/images/silver-left.gif); }
+.profile-lists .profile-col ul.shelf-list li a span { background-color: #dbdbdd; background-image: url(/axilent_whiskey_engine_static/css/images/silver-right.gif); }
+.profile-lists .profile-col ul.wishlist li a { background-image: url(/axilent_whiskey_engine_static/css/images/brown-left.gif); }
+.profile-lists .profile-col ul.wishlist li a span { background-color: #e5d2c4; background-image: url(/axilent_whiskey_engine_static/css/images/brown-right.gif); }
 
 .profile-reviews { padding-top: 20px; }
 .profile-reviews h3 { border-bottom: 1px solid #767676; padding-bottom: 5px; }
 .profile-reviews ul { padding-top: 13px; list-style-type: none; }
 .profile-reviews ul li { padding-bottom: 10px; }
 
-.review-cnt { background: url(axilent_whiskey_engine_static/css/images/review-cnt.gif) repeat-y 0 0; width: 601px; height: 100%; }
-.review-top { background: url(axilent_whiskey_engine_static/css/images/review-top.gif) no-repeat 0 0; width: 601px; }
-.review-bottom { background: url(axilent_whiskey_engine_static/css/images/review-bottom.gif) no-repeat 0 bottom; padding: 10px 12px 5px 40px; }
+.review-cnt { background: url(/axilent_whiskey_engine_static/css/images/review-cnt.gif) repeat-y 0 0; width: 601px; height: 100%; }
+.review-top { background: url(/axilent_whiskey_engine_static/css/images/review-top.gif) no-repeat 0 0; width: 601px; }
+.review-bottom { background: url(/axilent_whiskey_engine_static/css/images/review-bottom.gif) no-repeat 0 bottom; padding: 10px 12px 5px 40px; }
 .review-bottom .review-info { }
 .review-bottom .review-info h3 { float: left; display: inline; border-bottom: 0; margin-right: 10px; }
 .review-bottom .review-info h3 a { text-decoration: underline; }
@@ -338,7 +338,7 @@ td.center { text-align: center; }
 .we-btn { text-align: center; font-size: 16px; }
 */
 
-.blue-btn { border: 0; display: inline; background: url(axilent_whiskey_engine_static/css/images/blue-btn_mobile.gif) no-repeat 0 0; width: 343px;  margin: 10px 0; font-family: Georgia, serif; font-size: 60px; color: #fff; font-weight: bold; }
+.blue-btn { border: 0; display: inline; background: url(/axilent_whiskey_engine_static/css/images/blue-btn_mobile.gif) no-repeat 0 0; width: 343px;  margin: 10px 0; font-family: Georgia, serif; font-size: 60px; color: #fff; font-weight: bold; }
 input.blue-btn { height: 84px; }
 
 /*
