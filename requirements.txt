@@ -2,8 +2,10 @@ Django==1.4
 Markdown==2.1.1
 -e git://github.com/Axilent/sharrock@aeb9efd86469072b4501db7d8281e9b337841f51#egg=Sharrock-dev
 South==0.7.5
+boto==2.5.2
 distribute==0.6.27
 dj-database-url==0.2.1
+django-storages==1.1.5
 gevent==0.13.7
 greenlet==0.4.0
 gunicorn==0.14.3
