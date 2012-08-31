@@ -522,7 +522,7 @@ td.center { text-align: center; }
 
 .we-btn { text-align: center; font-size: 16px; }
 
-.blue-btn { border: 0; display: inline; background: url(/axilent_whiskey_engine_static/css/images/blue-btn.gif) no-repeat 0 0; width: 143px;  margin: 10px 0; font-family: Georgia, serif; line-height: 22px; color: #fff; font-weight: bold; 
+.blue-btn { border: 0; display: inline; background: url(/axilent_whiskey_engine_static/css/images/blue-btn.gif) no-repeat 0 0; width: 143px;  margin: 10px 0; font-family: Georgia, serif; line-height: 22px; color: #fff; font-weight: bold; }
 
 input.blue-btn { height: 22px; }
 
@@ -562,6 +562,23 @@ div#main-search {
 
 }
 
+#main-search {
+
+	background-color:#EDE0D7;
+
+	width: 650px;
+
+	margin-bottom: 30px;
+
+	padding: 10px;
+
+	text-align: center;
+
+	font-size: 18px;
+
+	font-weight: bold;
+
+}
 
 
 .btn-search{
