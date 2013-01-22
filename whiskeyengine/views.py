@@ -33,7 +33,7 @@ def home(request,whiskey_slug=None):
         sweet = _convert_value(request.GET['sweet'])
         
         search_results = axl.search(content_types='Whiskey',query='smoothness:%s bite:%s sweet:%s' % (str(smooth),str(bite),str(sweet)))
-        if len(search_results):
+        if search_results and len(search_results):
             print 'using search results'
             featured_whiskey = search_results[0]
         else:
