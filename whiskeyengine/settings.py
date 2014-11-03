@@ -1,23 +1,39 @@
 # Django settings for whiskeyengine project.
 import os
+import sys
+import dj_database_url
 
-# =========================
-# = Environment Variables =
-# =========================
-ENV_DEBUG = os.environ.get('DEBUG',False)
-ENV_ADMIN = os.environ.get('ADMIN','ops@axilent.com')
-ENV_DJANGO_KEY = os.environ.get('DJANGO_KEY','')
-ENV_AXILENT_LIBRARY_KEY = os.environ.get('AXILENT_LIBRARY_KEY','')
-ENV_AXILENT_PRODUCTION_KEY = os.environ.get('AXILENT_PRODUCTION_KEY','')
-ENV_AXILENT_ENDPOINT = os.environ.get('AXILENT_ENDPOINT','https://www.axilent.net')
-
-if ENV_DEBUG == 'False' or not ENV_DEBUG:
-    DEBUG = False
-else:
-    DEBUG = True
+DEBUG = os.environ.get('DEBUG',False)
 TEMPLATE_DEBUG = DEBUG
 
-#STATIC_URL = '/static/'
+ADMINS = (
+    # ('Your Name', 'your_email@example.com'),
+    ('Loren Davie','loren@axilent.com'),
+)
+MANAGERS = ADMINS
+
+# ======
+# = DB =
+# ======
+if os.environ.get('WHISKEYENGINE_RUNLOCAL'):
+    db_engine = os.environ.get('DB_ENGINE','django.db.backends.postgresql_psycopg2')
+    db_name = os.environ.get('DB_NAME','whiskeyengine')
+    DATABASES = {
+        'default': {
+            'ENGINE': db_engine, # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': db_name,                      # Or path to database file if using sqlite3.
+            'USER': '',                      # Not used with sqlite3.
+            'PASSWORD': '',                  # Not used with sqlite3.
+            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        }
+    }
+else:
+    # override database name above
+    DATABASES['default'] = dj_database_url.config()
+    
+ALLOWED_HOSTS = ['www.whiskey-engine.com','.whiskey-engine.com','localhost'] # need to add heroku app url
+
 # ======================
 # S3 via django-storages
 # ======================
@@ -27,8 +43,13 @@ STATICFILES_STORAGE = DEFAULT_FILE_STORAGE
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID', '')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY', '')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME', 'axilent_whiskey_engine_static')
-#AWS_STORAGE_BUCKET_NAME = 'axilent_whiskey_engine_static'
-STATIC_URL = '//s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
+STATIC_HOST = os.environ.get('WHISKEYENGINE_STATIC_HOST','//s3.amazonaws.com')
+
+STATIC_URL = '/static/'
+local_static = os.environ.get('WHISKEYENGINE_LOCALSTATIC',None)
+if not local_static:
+    STATIC_URL = '%s/%s/' % (STATIC_HOST,AWS_STORAGE_BUCKET_NAME)
+
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 
@@ -38,36 +59,8 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# ======
-# = DB =
-# ======
-db_engine = os.environ.get('DB_ENGINE','django.db.backends.sqlite3')
-db_name = os.environ.get('DB_NAME','whiskeyengine')
-DATABASES = {
-    'default': {
-        'ENGINE': db_engine, # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': db_name,                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    }
-}
+STATIC_ROOT = os.environ.get('WHISKEYENGINE_WEB_STATIC_ROOT','')
 
-# ===============
-# For Heroku DB =
-# ===============
-import dj_database_url
-# override database name above
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
-
-if 'PYTHONHOME' in os.environ:
-    #default_pwd = os.environ['PYTHONHOME']
-    default_pwd = '/app/'
-elif 'PWD' in os.environ:
-    default_pwd = os.environ['PWD']
-else:
-    default_pwd = ''
 
 
 # Local time zone for this installation. Choices can be found here:
@@ -88,7 +81,7 @@ SITE_ID = 1
 USE_I18N = True
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = ENV_DJANGO_KEY
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -98,12 +91,15 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 )
 
 ROOT_URLCONF = os.environ.get('WHISKEY_URLCONF','whiskeyengine.urls')
 
-WHISKEY_APP = os.environ.get('WHISKEY_APP','whiskeyengine')
+WSGI_APPLICATION = 'whiskeyengine.wsgi.application'
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -114,7 +110,8 @@ INSTALLED_APPS = (
     'storages',
     'south',
     'gunicorn',
-    WHISKEY_APP,
+    'djax',
+    'whiskeyengine',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS =(
@@ -125,8 +122,46 @@ TEMPLATE_CONTEXT_PROCESSORS =(
         "django.core.context_processors.request",
         )
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        # 'mail_admins': {
+        #     'level': 'ERROR',
+        #     'filters': ['require_debug_false'],
+        #     'class': 'django.utils.log.AdminEmailHandler'
+        # },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'stream':sys.stdout,
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'whiskeyengine': {
+            'handlers': ['console'],
+            'level':'DEBUG',
+            'propagate':True,
+        },
+        'djax': {
+            'handlers': ['console'],
+            'level':'DEBUG',
+            'propagate': True,
+        },
+    }
+}
+
 # ===========
 # = Axilent =
 # ===========
-AXILENT_API_KEY = ENV_AXILENT_PRODUCTION_KEY
-AXILENT_ENDPOINT = ENV_AXILENT_ENDPOINT
+AXILENT_API_KEY = os.environ.get('AXILENT_API_KEY')
