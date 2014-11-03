@@ -54,13 +54,13 @@
     						<h3><a class="category_url" href="{{ feature.category.get_absolute_url }}"><span class="category_name">{{ feature.category }}</span></a></h3>
 							<div class="whiskey-metrics ui-corner-all">
 								<ul>
-									<li>Smooth:&nbsp;{{ feature.data.smoothness|floatformat:2 }}</li>
-									<li>Bite:&nbsp;{{ feature.data.bite|floatformat:2 }}</li>
-									<li>Sweet:&nbsp;{{ feature.data.sweet|floatformat:2 }}</li>
+									<li>Smooth:&nbsp;{{ feature.smoothness|floatformat:2 }}</li>
+									<li>Bite:&nbsp;{{ feature.bite|floatformat:2 }}</li>
+									<li>Sweet:&nbsp;{{ feature.sweet|floatformat:2 }}</li>
 								</ul>
 							</div>
     						<div class="post-entry">
-    							{{ feature.data.description }}
+    							{{ feature.description }}
     						</div>
     					</div>
     					<div class="cl">&nbsp;</div>
@@ -91,9 +91,6 @@
 					<div id="related_whiskey">
 						<h5>Getting Similar Whiskies...<img src="{{ STATIC_URL }}css/images/ajax-loader.gif"></h5>
 					</div>
-					{# <div id='recommended_whiskey'> #}
-					{# 						<h5>Getting Whiskies Recommended for you...<img src="{{ STATIC_URL }}css/images/ajax-loader.gif"></h5> #}
-					{# 					</div> #}
     			</div>
     			<div class="cl">&nbsp;</div>
     		</div>
