@@ -89,7 +89,7 @@
     			<div class="cl">&nbsp;</div>
     			<div class="bottom-content">
 					<div id="related_whiskey">
-						<h5>Getting Similar Whiskies...<img src="{{ STATIC_URL }}css/images/ajax-loader.gif"></h5>
+						<h5>Getting Similar Whiskeys...<img src="{{ STATIC_URL }}css/images/ajax-loader.gif"></h5>
 					</div>
     			</div>
     			<div class="cl">&nbsp;</div>
@@ -144,7 +144,7 @@
 	<script type="text/javascript">
 		$(function(){
 			// todo create profile
-			$('#related_whiskey').load('/related/{{ feature.key }}/');
+			$('#related_whiskey').load('/related/{{ feature.pk }}/');
 			$('#recommended_whiskey').load('/recommended/');
 		});
 	</script>

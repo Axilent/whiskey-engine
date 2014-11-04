@@ -37,12 +37,14 @@ def home(request,whiskey_slug=None):
     return render_to_response('index.html',{'feature':featured_whiskey},context_instance=RequestContext(request))
 
 
-def related_whiskey(request,whiskey_key):
+def related_whiskey(request,whiskey_id):
     """
     Gets whiskies related to the specified whiskey.
     """
-    base_whiskey = content_resource.get(params={'content_type_slug':'whiskey','content_key':whiskey_key})
-    related = [item['content'] for item in axl.contentchannel(channel='related-whiskey',basekey=whiskey_key)['default'][:3]]
+    base_whiskey = Whiskey.objects.get(pk=whiskey_id)
+    related = Whiskey.objects.channel(channel='Related Whiskey',basekey=base_whiskey.get_axilent_content_key())
+    if len(related) > 3:
+        related = related[:3]
     c = RequestContext(request)
     return render_to_response('includes/related.html',{'related':related,'base_whiskey':base_whiskey},context_instance=c)
 
@@ -72,7 +74,7 @@ def search(request):
     """
     Search for whiskey.
     """
-    results = axl.search(content_types='Whiskey',query=request.GET['q'])
+    results = Whiskey.objects.search(request.GET['q'])
     c = RequestContext(request)
     return render_to_response('search_results.html',{'results':results},context_instance=c)
 

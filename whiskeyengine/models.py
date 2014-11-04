@@ -26,6 +26,9 @@ class Whiskey(models.Model,ACEContent):
     sweet = models.FloatField()
     wood = models.FloatField()
     
+    bottle = models.CharField(null=True,max_length=500)
+    thumb = models.CharField(null=True, max_length=500)
+    
     objects = ContentManager()
     
     def __unicode__(self):
@@ -48,4 +51,6 @@ class Whiskey(models.Model,ACEContent):
             'smoothness':'smoothness',
             'sweet':'sweet',
             'wood':'wood',
+            'bottle':'bottle',
+            'thumb':'thumb',
         }
