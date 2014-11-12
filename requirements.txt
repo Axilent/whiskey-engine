@@ -11,6 +11,6 @@ greenlet==0.4.2
 gunicorn==18.0
 psycopg2==2.5.2
 python-dateutil==2.2
-requests==2.4.3
-six==1.8.0
+requests==2.2.1
+six==1.6.1
 wsgiref==0.1.2
