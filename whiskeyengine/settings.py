@@ -15,6 +15,7 @@ MANAGERS = ADMINS
 # ======
 # = DB =
 # ======
+DATABASES = {}
 if os.environ.get('WHISKEYENGINE_RUNLOCAL'):
     db_engine = os.environ.get('DB_ENGINE','django.db.backends.postgresql_psycopg2')
     db_name = os.environ.get('DB_NAME','whiskeyengine')
