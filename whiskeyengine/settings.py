@@ -32,7 +32,7 @@ else:
     # override database name above
     DATABASES['default'] = dj_database_url.config()
     
-ALLOWED_HOSTS = ['www.whiskey-engine.com','.whiskey-engine.com','localhost'] # need to add heroku app url
+ALLOWED_HOSTS = ['www.whiskey-engine.com','.whiskey-engine.com','localhost','new-whiskey-engine.herokuapp.com'] # need to add heroku app url
 
 # ======================
 # S3 via django-storages
