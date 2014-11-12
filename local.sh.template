@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-# Sets environment variables for local execution of Axilent Docs
-export AXILENT_DOCS_DEBUG=true
-export AXILENT_DOCS_SECRET_DJANGO_KEY='<your-django-secret-key>'
-export AXILENT_DOCS_API_KEY = '<your-axilent-api-key>'
-export AWS_ACCESS_KEY_ID='<your-aws-access-key-id>'
-export AWS_SECRET_ACCESS_KEY='<your-aws-secret-access-key>'
-
-# Mobile Site Switch - uncomment for mobile site
-# export WHISKEY_URLCONF='whiskeyengine.mobile_urls'
+# Set envars
+export DEBUG=true
+export WHISKEYENGINE_RUNLOCAL=true
+export AWS_ACCESS_KEY_ID=''
+export AWS_SECRET_ACCESS_KEY=''
+export AWS_STORAGE_BUCKET_NAME=''
+export DJANGO_SECRET_KEY=''
+export AXILENT_API_KEY=''
 
 # Run
 ./manage.py $1 $2 $3

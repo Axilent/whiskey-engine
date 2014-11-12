@@ -4,7 +4,7 @@ from django.contrib import admin
 
 urlpatterns = patterns('whiskeyengine.views',
     (r'^$','home'),
-    (r'^related/(?P<whiskey_key>[a-fA-F0-9]+)/$','related_whiskey'),
+    (r'^related/(?P<whiskey_id>\d+)/$','related_whiskey'),
     (r'^review/(?P<whiskey_id>\d+)/$','review_whiskey'),
     (r'^recommended/$','recommended_whiskey'),
     (r'^search/$','search'),

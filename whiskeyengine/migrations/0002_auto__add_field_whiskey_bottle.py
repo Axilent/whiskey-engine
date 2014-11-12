@@ -8,36 +8,22 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'Whiskey'
-        db.create_table(u'whiskeyengine_whiskey', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('description', self.gf('django.db.models.fields.TextField')(blank=True)),
-            ('slug', self.gf('django.db.models.fields.SlugField')(max_length=50)),
-            ('category', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('bite', self.gf('django.db.models.fields.FloatField')()),
-            ('candy', self.gf('django.db.models.fields.FloatField')()),
-            ('complexity', self.gf('django.db.models.fields.FloatField')()),
-            ('flowers', self.gf('django.db.models.fields.FloatField')()),
-            ('fruit', self.gf('django.db.models.fields.FloatField')()),
-            ('herbs_spice', self.gf('django.db.models.fields.FloatField')()),
-            ('length_of_finish', self.gf('django.db.models.fields.FloatField')()),
-            ('smoothness', self.gf('django.db.models.fields.FloatField')()),
-            ('sweet', self.gf('django.db.models.fields.FloatField')()),
-            ('wood', self.gf('django.db.models.fields.FloatField')()),
-        ))
-        db.send_create_signal(u'whiskeyengine', ['Whiskey'])
+        # Adding field 'Whiskey.bottle'
+        db.add_column(u'whiskeyengine_whiskey', 'bottle',
+                      self.gf('django.db.models.fields.CharField')(max_length=500, null=True),
+                      keep_default=False)
 
 
     def backwards(self, orm):
-        # Deleting model 'Whiskey'
-        db.delete_table(u'whiskeyengine_whiskey')
+        # Deleting field 'Whiskey.bottle'
+        db.delete_column(u'whiskeyengine_whiskey', 'bottle')
 
 
     models = {
         u'whiskeyengine.whiskey': {
             'Meta': {'object_name': 'Whiskey'},
             'bite': ('django.db.models.fields.FloatField', [], {}),
+            'bottle': ('django.db.models.fields.CharField', [], {'max_length': '500', 'null': 'True'}),
             'candy': ('django.db.models.fields.FloatField', [], {}),
             'category': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'complexity': ('django.db.models.fields.FloatField', [], {}),

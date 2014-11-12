@@ -4,3 +4,4 @@ local.sh
 mobile_local.sh
 .env
 *.swp
+env
