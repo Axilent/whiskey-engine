@@ -3,7 +3,7 @@ Djax==0.7.0
 Markdown==2.1.1
 Sharrock-Client==0.6.3.3
 South==0.8.4
-boto==2.34.0
+boto==2.27.0
 dj-database-url==0.3.0
 django-storages==1.1.8
 gevent==1.0
